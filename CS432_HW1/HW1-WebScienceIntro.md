@@ -55,13 +55,13 @@ I designed the graph using Miro, I just created every node first then started ar
 For some of our later assignments, you will be analyzing large numbers of webpages. The goal of this question is to write a Python program to gather URIs of webpages that have enough text so they will be useful later.
 
 Your program must do the following:
+* take the URI of a seed webpage as a command-line argument
+* extract all the links from the page's HTML
+* for each link, request the URI and use the `Content-Type` HTTP response header to determine if the link references an HTML file (`text/html`)
+    * if it does, use the `Content-Length` HTTP response header to determine if it contains more than 1000 bytes
+       * if it does, then print the final URI (after any redirects) 
 
-take the URI of a seed webpage as a command-line argument
-extract all the links from the page's HTML
-for each link, request the URI and use the Content-Type HTTP response header to determine if the link references an HTML file (text/html)
-if it does, use the Content-Length HTTP response header to determine if it contains more than 1000 bytes
-if it does, then print the final URI (after any redirects)
-Use this program to collect at least 500 unique URIs of webpages that contain more than 1000 bytes. Save the list of URIs to a file to use in later assignments. The file must be uploaded to your GitHub repo.
+Use this program to collect at least 500 **unique** URIs of webpages that contain more than 1000 bytes.  Save the list of URIs to a file to use in later assignments.  The file must be uploaded to your GitHub repo.
 ## Answer
 I used multiple links to generate 500 URIs rather than branching off one link. I wanted a larger variety of websites.
 
