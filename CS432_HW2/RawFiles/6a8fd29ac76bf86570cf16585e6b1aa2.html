@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Zoom Developer Forum</title>
+    <meta name="description" content="Community forum for Zoom&#39;s APIs, SDKs, and developer tools.">
+    <meta name="generator" content="Discourse 3.3.0.beta1-dev - https://github.com/discourse/discourse version bf02657dbff881f975285f291979997242cf6321">
+<link rel="icon" type="image/png" href="https://global.discourse-cdn.com/business6/uploads/zoomdeveloper/optimized/3X/8/e/8e200b9a0e198d5026b7eec59f78fbe49aad5979_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://global.discourse-cdn.com/business6/uploads/zoomdeveloper/optimized/3X/0/4/0402829dd7b18703d3c1c9533b17dc40e609a55e_2_180x180.png">
+<meta name="theme-color" media="all" content="#ffffff">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<link rel="canonical" href="https://devforum.zoom.us/" />
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://devforum.zoom.us","name":"Zoom Developer Forum","potentialAction":{"@type":"SearchAction","target":"https://devforum.zoom.us/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="https://devforum.zoom.us/opensearch.xml" title="Zoom Developer Forum Search">
+
+    <link href="https://sea2.discourse-cdn.com/business6/stylesheets/color_definitions_zm-colors_3_12_5db1b67d155d4db8e8a9a089e337b58ec0eadace.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" class="light-scheme"/>
+
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/desktop_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="desktop"  />
+
+
+
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/checklist_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="checklist"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-adplugin_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-adplugin"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-ai_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-ai"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-akismet_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-assign_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-assign"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-cakeday_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-data-explorer_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-details_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-details"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-lazy-videos_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-lazy-videos"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-local-dates_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-narrative-bot_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-narrative-bot"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-policy_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-policy"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-presence_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-presence"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-solved_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-solved"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-templates_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-templates"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-topic-voting_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-topic-voting"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/footnote_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="footnote"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/hosted-site_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="hosted-site"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/poll_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="poll"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/spoiler-alert_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="spoiler-alert"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-ai_desktop_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-ai_desktop"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/discourse-topic-voting_desktop_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="discourse-topic-voting_desktop"  />
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/poll_desktop_ad05afff27c9167b85ccb5168cef431219fd63af.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="https://sea2.discourse-cdn.com/business6/stylesheets/desktop_theme_12_145c6757a22f77650672f125917739ae8a24e16a.css?__ws=devforum.zoom.us" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="12" data-theme-name="zoom-dev-forum"/>
+
+    
+    
+      <meta property="og:site_name" content="Zoom Developer Forum" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://global.discourse-cdn.com/business6/uploads/zoomdeveloper/original/3X/4/6/4605983ae0a4da639bac92f04c5dece44b83fe36.png" />
+<meta property="og:image" content="https://global.discourse-cdn.com/business6/uploads/zoomdeveloper/original/3X/4/6/4605983ae0a4da639bac92f04c5dece44b83fe36.png" />
+<meta property="og:url" content="https://devforum.zoom.us/" />
+<meta name="twitter:url" content="https://devforum.zoom.us/" />
+<meta property="og:title" content="Zoom Developer Forum" />
+<meta name="twitter:title" content="Zoom Developer Forum" />
+<meta property="og:description" content="Community forum for Zoom&#39;s APIs, SDKs, and developer tools." />
+<meta name="twitter:description" content="Community forum for Zoom&#39;s APIs, SDKs, and developer tools." />
+
+    
+  </head>
+  <body class="crawler ">
+    
+    <header>
+  <a href="/">
+    Zoom Developer Forum
+  </a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+      <div itemscope itemtype='http://schema.org/ItemList'>
+  <meta itemprop='itemListOrder' content='http://schema.org/ItemListOrderDescending'>
+  <table class='category-list'>
+    <thead>
+      <tr>
+        <th class='category'>Category</th>
+        <th class='topics'>Topics</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class='category' style='border-color: #ED207B;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='0'>
+              <meta itemprop='url' content='/c/announcements/37'>
+              <h3>
+                <a href='/c/announcements/37'>
+                  <span itemprop='name'>Announcements</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Important News and Updates for Zoom Developers</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='17 Topics'>17</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #0088CC;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='1'>
+              <meta itemprop='url' content='/c/video-sdk/55'>
+              <h3>
+                <a href='/c/video-sdk/55'>
+                  <span itemprop='name'>Video SDK</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Video SDKs are development kits provided to enrich apps with video collaboration through highly customized UIs and access to raw video and audio data.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='344 Topics'>344</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #F1592A;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='2'>
+              <meta itemprop='url' content='/c/api-and-webhooks/8'>
+              <h3>
+                <a href='/c/api-and-webhooks/8'>
+                  <span itemprop='name'>API and Webhooks</span>
+                </a>
+              </h3>
+              <div itemprop='description'>REST APIs, authentication, and webhook events for Meetings, Webinars, Recordings, Chat, Reporting, and more.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='10011 Topics'>10011</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #92278F;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='3'>
+              <meta itemprop='url' content='/c/zoom-apps/39'>
+              <h3>
+                <a href='/c/zoom-apps/39'>
+                  <span itemprop='name'>Zoom Apps</span>
+                </a>
+              </h3>
+              <div itemprop='description'>The Zoom Apps SDK empowers developers to build apps that run in Zoom, enabling engaging experiences during and outside of a Zoom meeting.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='665 Topics'>665</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #9EB83B;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='4'>
+              <meta itemprop='url' content='/c/meeting-sdk/56'>
+              <h3>
+                <a href='/c/meeting-sdk/56'>
+                  <span itemprop='name'>Meeting SDK</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Meeting SDKs allow new and existing applications to embed Zoom meeting and webinar experiences.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='1511 Topics'>1511</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #F7941D;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='5'>
+              <meta itemprop='url' content='/c/marketplace/19'>
+              <h3>
+                <a href='/c/marketplace/19'>
+                  <span itemprop='name'>App Marketplace</span>
+                </a>
+              </h3>
+              <div itemprop='description'>The Zoom App Marketplace enables developers to build and distribute their applications. For conversations on using apps on the Marketplace, check out the <a href="https://community.zoom.com/t5/Marketplace/bd-p/marketplace">Zoom Community</a>.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='1292 Topics'>1292</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #652D90;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='6'>
+              <meta itemprop='url' content='/c/phone/47'>
+              <h3>
+                <a href='/c/phone/47'>
+                  <span itemprop='name'>Phone</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Zoom Phone APIs enable you to build applications and integrations for Zoom’s cloud phone system.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='180 Topics'>180</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #25AAE2;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='7'>
+              <meta itemprop='url' content='/c/team-chat/78'>
+              <h3>
+                <a href='/c/team-chat/78'>
+                  <span itemprop='name'>Team Chat Apps</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Team Chat Apps allow you to connect workflows within Zoom’s text-based chat platform.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='13 Topics'>13</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #231F20;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='8'>
+              <meta itemprop='url' content='/c/contact-center-sdk/65'>
+              <h3>
+                <a href='/c/contact-center-sdk/65'>
+                  <span itemprop='name'>Contact Center SDK</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Zoom Contact Center is an omnichannel cloud contact center solution that’s optimized for video and integrated into the Zoom experience.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='30 Topics'>30</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #92278F;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='9'>
+              <meta itemprop='url' content='/c/zfg/46'>
+              <h3>
+                <a href='/c/zfg/46'>
+                  <span itemprop='name'>Zoom for Government</span>
+                </a>
+              </h3>
+              <div itemprop='description'>This category is for developers building applications to support <a href="https://explore.zoom.us/en/government/">Zoom for Government</a> solutions.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='12 Topics'>12</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #231F20;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='10'>
+              <meta itemprop='url' content='/c/feature-requests/23'>
+              <h3>
+                <a href='/c/feature-requests/23'>
+                  <span itemprop='name'>Feature Requests</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Have an API or SDK feature request? Share it here!</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='1681 Topics'>1681</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #652D90;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='11'>
+              <meta itemprop='url' content='/c/events/76'>
+              <h3>
+                <a href='/c/events/76'>
+                  <span itemprop='name'>Events</span>
+                </a>
+              </h3>
+              <div itemprop='description'>This is where we will we post recordings and take questions for the monthly office hours. Each topic represents a meeting and links to the meeting recordings will be there. Please post your questions as replies under the appropriate topic.</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='12 Topics'>12</div>
+          </td>
+        </tr>
+        <tr>
+          <td class='category' style='border-color: #0088CC;'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='12'>
+              <meta itemprop='url' content='/c/showcase-projects/69'>
+              <h3>
+                <a href='/c/showcase-projects/69'>
+                  <span itemprop='name'>Showcase</span>
+                </a>
+              </h3>
+              <div itemprop='description'>Show off your projects, ask for feedback, and discover new things on the Zoom Developer Platform!</div>
+            </div>
+          </td>
+          <td class='topics'>
+            <div title='8 Topics'>8</div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/guidelines' itemprop="url">FAQ/Guidelines </a>
+        </span>
+      </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://zoom.us/terms' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='https://zoom.us/privacy' itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

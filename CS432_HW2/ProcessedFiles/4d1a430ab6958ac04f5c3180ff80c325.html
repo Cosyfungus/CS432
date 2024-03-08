@@ -1,0 +1,1141 @@
+/* <![CDATA[ */
+           document.querySelectorAll("ul.nav-menu").forEach(
+               ulist => { 
+                    if (ulist.querySelectorAll("li").length == 0) {
+                        ulist.style.display = "none";
+
+                                            } 
+                }
+           );
+            /* ]]> */
+.customer-stories-template-default.single-customer-stories .whiteBox .whiteBox__content.quote > span {display:block;}
+.ada-embed-drawer__iframe-container {
+    max-height: 550px !important;
+    max-width: 330px !important;
+    margin: 10px 10px 10px 10px !important;
+}
+#ot-do-not-sell img {
+    vertical-align: middle;
+    padding-bottom: 1px;
+}
+if(window.location.href.indexOf("onlycontent=1") > -1) {
+                var sheet = document.createElement('style')
+                sheet.innerHTML = "header,footer{ display:none !important; }";
+                document.body.appendChild(sheet);
+}
+if(window.location.href.indexOf("onlycontent=1") > -1) {
+                var sheet = document.createElement('style')
+                sheet.innerHTML = "#solvvy-lazy-button,#solvvy-container, #ada-entry, #onetrust-consent-sdk { display:none !important; }";
+                document.body.appendChild(sheet);
+}
+ if(window.location.href.indexOf("nohyperlink=1") > -1) {
+                var sheet = document.createElement('style')
+                sheet.innerHTML = "#solvvy-lazy-button { display:none !important; }";
+                document.body.appendChild(sheet);
+}
+window.addEventListener("load", function () { 
+  menuItemposition();
+  $( window ).resize(function() {
+     menuItemposition();
+  });
+});
+function menuItemposition() {
+// Menu position depends upon the screen size
+  /*var x = document.getElementById('resources-secondary');
+  var menuItemPos = document.querySelector('#resources-secondary').offsetLeft;
+  menuItemPos = Number(menuItemPos - 50);
+  x.querySelector('#'+'resourcesDropdown').style.left= -menuItemPos+"px";*/
+}
+// Change logo links based on current language
+try{
+var zoomLogoLink = "";
+if( document.querySelector(".ez__zoomLogo a") ) { 
+  zoomLogoLink = document.querySelector(".ez__zoomLogo a"); 
+}
+if( document.querySelector(".navbar-header a.zoom-logo") ) { 
+  zoomLogoLink = document.querySelector(".navbar-header a.zoom-logo"); 
+}
+let zoomLogoLinkForLang = [
+{language:"en",text:"https://zoom.us/en"},
+{language:"es",text:"https://zoom.us/es"},
+{language:"de",text:"https://zoom.us/de"},
+{language:"zh-cn",text:"https://zoom.us/zh-cn"},
+{language:"zh-tw",text:"https://zoom.us/zh-tw"},
+{language:"fr",text:"https://zoom.us/fr"},
+{language:"pt",text:"https://zoom.us/pt"},
+{language:"ja",text:"https://zoom.us/ja"},
+{language:"ru",text:"https://zoom.us/ru"},
+{language:"ko",text:"https://zoom.us/ko"},
+{language:"it",text:"https://zoom.us/it"},
+{language:"vi",text:"https://zoom.us/vi"},
+{language:"tr",text:"https://zoom.us/tr"},
+{language:"pl",text:"https://zoom.us/pl"},
+{language:"id",text:"https://zoom.us/id"},
+{language:"nl",text:"https://zoom.us/nl"},
+{language:"sv",text:"https://zoom.us/sv"},
+]; 
+var zoomLangSlug = window.location.pathname.split('/')[1];
+zoomLogoLinkForLang.map(function(v){if( v.language==zoomLangSlug && zoomLogoLink ){ zoomLogoLink.setAttribute("href",v.text); }});
+}
+catch(err) {
+}
+var trsArset = true;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    country: 'us',
+  });
+var isFreeAccount = false;
+  var SB = {
+    version: '4.0.90428.1110.b51f06ec',
+    contextPath: '',
+    baseUrl: 'https://zoom.us',
+    baseStaticUrl: 'https://zoom.us/static/90428',
+    loggedIn: false,
+    fbLoggedIn: false,
+    fbAppkey: '113289095462482',
+    fbAppPage: 'https://apps.facebook.com/zoomvideocall/',
+    fbScope: 'email,public_profile,user_friends',
+    pardotPaymentUrl: 'https://go.pardot.com/l/84442/2015-07-23/mw5t',
+    pardotBuyUrl: 'https://go.pardot.com/l/84442/2015-07-14/4xht',
+    pardotSubscriptionUrl: 'https://go.pardot.com/l/84442/2015-07-23/mv5y',
+    pardotActivateUserUrl: 'https://go.pardot.com/l/84442/2015-10-23/mspcv'
+  };
+// rewritting imported with the previous file language changing logic 
+  function rewriteLangChangeLogic() {
+    $('.dropdown-language').off('click', '.dropdown-menu a');
+    $('.dropdown-language').on('click', '.dropdown-menu a', function (ab) {
+      var aa = $(this)
+      var targetLang = aa.data('locale') || aa.data('lang') || 'en-US'
+      if (targetLang != '') {
+        $.cookie('_zm_lang', targetLang, {
+          expires: 365,
+          path: '/',
+          domain: i,
+          secure: true,
+        })
+        var langCodeArray = {
+          'en-US': 'en',
+          'es-ES': 'es',
+          'de-DE': 'de',
+          'zh-CN': 'zh-cn',
+          'zh-TW': 'zh-tw',
+          'fr-FR': 'fr',
+          'pt-PT': 'pt',
+          'jp-JP': 'ja',
+          'ru-RU': 'ru',
+          'ko-KO': 'ko',
+          'it-IT': 'it',
+          'vi-VN': 'vi',
+          'pl-PL':'pl',
+          'tr-TR':'tr',
+          'id-ID':'id',
+         'nl-NL':'nl',
+        'sv-SE':'sv',
+        }
+        var zmLangCode = langCodeArray[targetLang] || 'en'
+        var pName = location.pathname
+          .replace(/^\/docs/, '')
+          .replace(/.html$/, '') //      "/docs/en/team.html" => /en/team
+
+        pName = pName.replace(
+          /^\/(en-us|es-es|de-de|zh-cn|zh-tw|fr-fr|pt-pt|jp-jp|ru-ru|ko-ko|it-it|vi-vn|pl-pl|tr-tr|id-id|nl-nl|sv-sv|en|es|de|fr|pt|ja|ru|ko|it|vi|pl|tr|id|nl|sv)\//,
+          '/'
+        )
+        var pageURL = location.origin + '/' + zmLangCode + pName + location.search
+        console.log('replacing', pageURL)
+        location.replace(pageURL)
+      }
+    })
+  }
+
+  setTimeout(rewriteLangChangeLogic, 2000);
+
+ // script for complaince page 
+    var cdataId = $('.dropdown-menu .active a').attr("data-locale");
+    var clanCodeArray = {
+        'en-US': 'en',
+        'es-ES': 'es',
+        'de-DE': 'de',
+        'zh-CN': 'zh-cn',
+        'zh-TW': 'zh-tw',
+        'fr-FR': 'fr',
+        'pt-PT': 'pt',
+        'jp-JP': 'ja',
+        'ru-RU': 'ru',
+        'ko-KO': 'ko',
+        'it-IT': 'it',
+        'vi-VN': 'vi',
+        'pl-PL': 'pl',
+        'tr-TR': 'tr',
+        'id-ID':'id',
+        'nl-NL':'nl',
+        'sv-SE':'sv',
+    }
+    var czmLangCode = clanCodeArray[cdataId] || 'en';
+    $(".region-dropdown .select_mate select option").each(function(index) {
+        replacedStr = 'explore.zoom.us' + '/' + czmLangCode;
+        oldurl = $(this).attr("value");
+        newurl = oldurl.replace('explore.zoom.us', replacedStr);
+        $(this).attr("value", newurl);
+    });
+    $(".page-template-Compliance .grid-container .grid-item a").each(function(index) {
+        replacedStr = 'explore.zoom.us' + '/' + czmLangCode;
+        oldurl = $(this).attr("href");
+        newurl = oldurl.replace('explore.zoom.us', replacedStr);
+        $(this).attr("href", newurl);
+        console.log($(this).attr("href"));
+    });
+var DOMAIN = "https://zoom.us";
+
+  $(function () {
+    var phones = [
+      "1.888.799.9666",
+      "1.888.799.8854",
+      "1.888.799.0125",
+      "1.888.799.5926",
+      "1.888.799.9666",
+    ];
+    dataLayer = dataLayer || [];
+    $.ajax({
+      type: "POST",
+      url: "https://explore.zoom.us/market_verify",
+      data: {},
+      async: false,
+      timeout: 5000,
+      dataType: "json",
+      success: function (response) {
+        var data = response.result;
+        if (data.baseUrl) SB.baseUrl = data.baseUrl;
+        if (data.web_domain) SB.webDomain = "https://"+data.web_domain;
+       // data layer implementation
+window.dataLayer.push({
+    accountChannel: data.accountChannel ? data.accountChannel : undefined,
+    addOns: data.addOns ? data.addOns : undefined,
+    autoRenew: data.autoRenew ? data.autoRenew : undefined,
+    billingCountry: data.billingCountry ? data.billingCountry : undefined,
+    billingCycle: data.billingCycle ? data.billingCycle : undefined,
+    chargeType: data.chargeType ? data.chargeType : undefined,
+    domainType: data.domainType ? data.domainType : undefined,
+    event:"pageLoad",
+    expirationDate: data.expirationDate ? data.expirationDate : undefined,
+    fullUrl: data.fullURL ? data.fullURL : undefined,
+    licenseCount: undefined,
+    licenseDiscount: data.licenseDiscount ? data.licenseDiscount : undefined,
+    pageLanguage: "en-US",
+    pageName: data.pageName ? data.pageName : undefined,
+    paidStartDate: data.paidStartDate ? data.paidStartDate : undefined,
+    productSub: undefined,
+    productUserType: data.productUserType ? data.productUserType : undefined,
+    rateMrr: data.rateMrr ? data.rateMrr : undefined, 
+    trackingGuid: data.trackingGuid ? data.trackingGuid : undefined,
+    userCountry: data.userCountry ? data.userCountry : undefined,
+    userRole: data.userRole ? data.userRole : undefined,
+    userStatus: data.userStatus ? data.userStatus : undefined,
+    visitorGuid: data.visitorGuid ? data.visitorGuid : undefined,
+    zoom_id: data.zoom_id ? data.zoom_id : undefined,
+          });
+        // 0. branding logo
+        if (data.__branding && data.__branding_logo) {
+          $("#header_container #header .navbar-header .logo").attr(
+            "src",
+            data.__branding_logo
+          );
+        }
+          if (data.isLogin) {
+$(".ez__signedInItems").css('display', 'flex');
+$(".ez__signedOutItems").css('display', 'none');
+$(".user-signedout").css('display', 'none');
+$(".user-signedin").css('display', 'flex');
+$(".footersignedin").show();
+$(".footersignedout").hide();
+$( ".ez__signedInItems ul li:first-child div ul" ).append( '<li><a href="https://zoom.us/calendar/list">Public Event List</a></li>' );
+$( ".user-signedin li:first-child div ul " ).append( '<li><a href="https://zoom.us/calendar/list">Public Event List</a></li>');
+}
+        //1, if branding header,
+        if (data.__branding && data.__branding_header) {
+          $("#header_container")
+            .addClass("branding")
+            .removeClass("zoom-newhd")
+            .children()
+            .removeClass("zoom-newhd");
+          $("#header_outer > #header").remove();
+          $("#header_outer").prepend(data.__branding_header);
+          $("#content_container").removeClass("zoom-newcontent");
+          var html = [];
+          if (data.isLogin) {
+            html.push('<li class="pic">');
+            html.push('<a href="' + DOMAIN + '/profile" title="View my profile" class="profile-pic hidden-xs">');
+            if (data.picUrl && data.picUrl != "") {
+              var pic_url = "https://"+data.web_domain+""+data.picUrl;
+              html.push('<img id="headerPic" src="' + pic_url + '" alt="" />');
+            } else {
+              html.push('<div id="headerPic" class="user-image"></div>');
+            }
+            html.push("</a></li>");
+            html.push(
+              '<div class="visible-xs divider" role="presentation"></div>'
+            );
+            html.push(
+              '<li class="signin"><a id="btnLogout" href="javascript:;" class="rr">Sign Out</a></li>'
+            );
+            $("#navbar > ul.navbar-right")
+              .append(html.join(""))
+              .parent()
+              .removeClass("hideme")
+              .show();
+          } else {
+            $(".join_user_signed_in").hide();
+            $(".join_user_not_signed_in").show();
+            html.push(
+              '<div class="visible-xs divider" role="presentation"></div>'
+            );
+            html.push(
+              '<li class="signin"><a class="link" href="' + DOMAIN + '/signin">Sign In</a></li>'
+            );
+            html.push(
+              '<div class="visible-xs divider" role="presentation"></div>'
+            );
+            html.push(
+              "<li><div id=\"signupfree\" class=\"hidden-xs\"><a class=\"btn btn-primary signupfree\" href=\"" + DOMAIN + "/signup\" onClick=\"ga('send', 'event', 'freesignup', 'click-nav-signupfree', 'Header Nav Sign up Free');\">Sign Up Free</a></div></li>"
+            );
+            html.push(
+              "<li><a class=\"visible-xs\" href=\"" + DOMAIN + "/signup\" onClick=\"ga('send', 'event', 'freesignup', 'click-nav-signupfree', 'Header Nav Sign up Free');\">Sign Up Free</a></li>"
+            );
+            $("#navbar > ul.navbar-right")
+              .append(html.join(""))
+              .parent()
+              .removeClass("hideme")
+              .show();
+          }
+        } else {
+
+          if (data.isLogin) {
+            var html = [];
+            $("#signupfree").parent().hide();
+            $("li.signin").hide();
+            $("li .sign-link").hide();
+            if ("/home" == location.pathname) {
+              html.push(
+                '<li class="signin"><a class="link" href="/profile">My Account</a></li>'
+              );
+            } else {
+              html.push('<li class="pic">');
+              html.push(
+                '<a href="' + DOMAIN + '/profile" title="View my profile" class="profile-pic hidden-xs">'
+              );
+              if (data.picUrl && data.picUrl != "") {
+                var pic_url = "https://"+data.web_domain+""+data.picUrl;
+                html.push(
+                  '<img id="headerPic" src="' + pic_url + '" alt="" />'
+                );
+              } else {
+                html.push('<div id="headerPic" class="user-image"></div>');
+              }
+              html.push("</a></li>");
+              html.push(
+                '<div class="visible-xs divider" role="presentation"></div>'
+              );
+              html.push(
+                '<li class="signin"><a id="btnLogout" href="javascript:;" class="rr">SIGN OUT</a></li>'
+              );
+            }
+           // $("ul.navbar-right").append(html.join(""));
+          }
+        }
+
+        // 2, if branding footer
+        if (data.__branding && data.__branding_footer) {
+          $("#footer_container")
+            .empty()
+            .addClass("branding")
+            .append(data.__branding_footer);
+        }
+        if (data.__branding) {
+          $("body").addClass("vanity-site");
+        }
+        //3, if branding css,
+        if (data.__branding && data.__branding_css) {
+          $("head").append("<style>" + data.__branding_css + "</style>");
+          $("body").addClass("branding");
+        }
+        // 4, check login
+        if (data && data.isLogin) {
+          $("#header_container").addClass("loggedin");
+          SB.loggedIn = true;
+          SB.stype = data.stype;
+          window.zmGlobalMrktKey = data.zmGlobalMrktKey;
+          var index = parseInt(data.__phone_level);
+          if (index < 0) index = 0;
+          $(".support-phone")
+            .text(phones[index])
+            .prop("href", "tel:" + phones[index]);
+          SB.sid = data.sid;
+          $(".dropdown-currency").parents("ul").hide();
+          $(".dropdown-currency").parents("ul").prev().hide();
+          $(".homepage").attr("data-login", "true");
+        } else {
+          // switchCcy($.cookie('_zm_currency'));
+          $(".homepage").attr("data-login", "false");
+        }
+
+        //5, check EU country
+        if (data && data.isEUCountry) {
+               $(".gdpr-compliance").parent().show();
+        }
+
+        //6, check country code
+        if (data && data.countrycode) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            country: data.countrycode,
+          });
+        }
+
+        if (data.countrycode == "ca") {
+          $(".gdpr-compliance").show();
+        }
+        if (data.countrycode == "kr") {
+          window.countrycode = "ko";
+        }
+
+        //check AU country
+        if (data.countrycode == "au") {
+          $(".hardwarePage").attr("data-countrycode", "au");
+        }
+
+        //check JP country
+        // if(data.countrycode == 'jp') {
+        // $.cookie('_zm_currency', "JPY", {expires: 1, path: '/', secure: true});
+        // switchCcy("JPY");
+        // }
+        if(data.countrycode == 'au' || data.countrycode == 'sg' || data.countrycode == 'in'){
+        $(".gr-apac").show();
+         $(".gr-int").hide();
+        }
+        //check paid user
+        if (data.isLogin) {
+          $("body").attr("data-paiduser", data.isPaidUser);
+        }
+
+        //currency targeting
+        if (data.currency) {
+          setCookie("_zm_currency", "", -1);
+          $.cookie("_zm_currency", data.currency, {
+            expires: 1,
+            path: "/",
+            domain: ".zoom.us",
+            secure: true,
+          });
+          switchCcy(data.currency);
+        }
+
+        // captcha type
+        if (data.smartcaptch) {
+          $(".smartcaptcha").removeAttr("style");
+          $(".invisiblecaptcha").remove();
+        } else {
+          $(".invisiblecaptcha").removeAttrs("style");
+          $(".smartcaptcha").remove();
+        }
+        // use cn footer
+        if (data.is_cn) {
+          updateCNHeader();
+        }
+      },
+    });
+
+    $("#btnLogout")
+      .unbind("click")
+      .on("click", function (e) {
+        if (!SB.loggedIn) {
+          return;
+        }
+        if (SB.stype == 0) {
+          if (SB.token == "FAKE_TK") {
+            logoutCallback( SB.webDomain + "/logout" );
+          } else {
+            window.location.href =
+              "https://www.facebook.com/logout.php?access_token=" +
+              SB.token +
+              "&next=" +
+              SB.baseUrl +
+              SB.contextPath +
+              "/logout";
+          }
+        } else if (SB.stype == 1) {
+          if (SB.token == "FAKE_TK") {
+            logoutCallback( SB.webDomain + "/logout" );
+          } else {
+            var iframe = $(
+              '<iframe src="https://accounts.google.com/Logout" frameborder="0" width="1" height="1"></iframe>'
+            );
+            iframe.load(function () {
+                logoutCallback( SB.webDomain + "/logout" );
+            });
+            $(document.body).append(iframe);
+          }
+        } else if (SB.stype == 101) {
+            logoutCallback( SB.webDomain + "/saml/logout" );
+        } else {
+            logoutCallback( SB.webDomain + "/logout" );
+        }
+      });
+
+    $(".dropdown-language").on("click", ".dropdown-menu a", function (e) {
+      if (SB.loggedIn) {
+        var userId = SB.sid;
+        var locale = $(this).data("locale");
+        if (userId != "") {
+          SB.post3({
+            url: "/profile/saveLocale",
+            data: { userId: userId, locale: locale },
+            success: function (response) { },
+          });
+        }
+      }
+    });
+
+    $(".dropdown-currency").on("click", ".dropdown-menu a", function (e) {
+      var self = $(this);
+      if (self.data("currency") != "") {
+        setCookie("_zm_currency", "", -1);
+        $.cookie("_zm_currency", self.data("currency"), {
+          expires: 1,
+          path: "/",
+          domain: ".zoom.us",
+          secure: true,
+        });
+        switchCcy(self.data("currency"));
+      }
+    });
+
+    function logoutCallback( url ){
+        window.location.href = url;
+        window.history.back();
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+      var expires = "; expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + expires + "; path=/; secure=true";
+    }
+
+    function switchCcy(currecny) {
+      var ccyArray = ["USD", "AUD", "EUR", "GBP", "JPY", "CAD", "INR"];
+      var ccyIndex = $.inArray(currecny, ccyArray);
+
+      if (ccyIndex > -1) {
+        $(".dropdown-currency > .dropdown-menu> li").removeClass("active");
+        var activeNode = $(
+          ".dropdown-currency > .dropdown-menu> li > a[data-currency=" +
+          currecny +
+          "]"
+        );
+        $(".dropdown-currency a>span:first").text(activeNode.text());
+        activeNode.parent().addClass("active");
+
+        var ccyNodes = $("body [data-ccy]");
+        for (i = 0; i < ccyNodes.length; ++i) {
+          var ccyValList = ccyNodes[i].getAttribute("data-ccy").split(",");
+          var ccyTxt = ccyNodes[i].textContent;
+          $.each(ccyValList, function (index, item) {
+            if (ccyTxt.indexOf(item) > -1) {
+              ccyNodes[i].innerHTML = ccyTxt.replace(item, ccyValList[ccyIndex]);
+            }
+          });
+        }
+      }
+    }
+    
+    function updateCNHeader() {
+      $("#header_container #black-topbar ul>li:last>a")
+        .text("Ã¨ÂâÃ§Â³Â»Ã¦Å â¬Ã¦ÅÂ¯Ã¦âÂ¯Ã¦ÅÂ")
+        .attr("href", "https://support.zoom.us/hc/zh-cn/articles/360039935891");
+      $("#header_container #navbar li>a.top-contactsales").attr(
+        "href",
+        DOMAIN + "/cncontactsales/cs"
+      );
+    }
+  });
+$(function () {
+        function getFromParam(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURIComponent(r[2]);
+            return '';
+        }
+
+        if ('1' == getFromParam('onlycontent')) {
+            $('.page-header').hide();
+            $('#leftNav').hide();
+            $('main').removeClass('zoom-newcontent');
+            $('main').parents('body').addClass('onlycontent');
+            $('#ZoomWebBanner').remove();
+            $('.brand-right').css({ float: 'inherit', 'font-size': 14 });
+            $('#teconsent').remove();
+            var params = window.location.href.slice(window.location.href.indexOf('?') + 0); 
+            $.each($('main a'), function (index, key) {
+               var href = jQuery(this).attr("href");  
+               if ( ( typeof href  !== "undefined" ) && ( href.indexOf("/media/") == -1 ) && ( href.indexOf("mailto:") == -1 ) ) {
+                   $(this).attr("href",href+params);
+               }
+            });
+        }
+        if ('1' == getFromParam('nohyperlink')) {
+            $('a.sr-only').remove();
+            $('#leftNav').hide();
+            $.each($('main a'), function (index, key) {
+                $(this)
+                    .after('<span>' + $(this).html() + '</span>')
+                    .remove();
+            });
+        }
+    });
+$(document).ready(function() {
+			if (window.location.href.indexOf("onlycontent=1") > -1) {
+				var oldUrl = $('.oos-content-desc a').attr('href');
+				$('.oos-content-desc a').attr('href', oldUrl + '?onlycontent=1');
+			}
+		});
+// Accessibility Contents
+(function() {
+	var htmlElements = `<div id="skiptocontent">
+<a class="skip-mainContent" role="link" aria-label="Skip to main content" href="#nested" tabindex="1" onclick="return skipmaincontent();">Skip to main content</a>
+<a class="accessibility-overview" role="link" aria-label="Accessibility overview" href="https://explore.zoom.us/en/accessibility/" tabindex="2">Accessibility Overview</a>
+</div>`
+	$('header').prepend(htmlElements);
+	
+	document.addEventListener('keyup', function (e) {
+		checkTabPress(e);
+	}, false);
+})();
+
+ function skipmaincontent() {
+       $([document.documentElement, document.body]).animate({
+        scrollTop: $(".main-DefaultTemplate").offset().top
+    }, 2000);
+return true;
+ }
+
+var tabKeyPressedFirstTime = true;
+var tabKeyPressedSecondTime = false;
+function checkTabPress(e) {
+    'use strict';
+    var ele = document.activeElement;
+    if (e.keyCode === 9 && tabKeyPressedFirstTime && !tabKeyPressedSecondTime) {
+        $("#skiptocontent .skip-mainContent").focus();
+		tabKeyPressedFirstTime = false;
+		tabKeyPressedSecondTime = true;
+    } else if(tabKeyPressedSecondTime){
+		$("#skiptocontent .skip-mainContent").focus();
+		$("#skiptocontent .accessibility-overview").focus();
+		tabKeyPressedFirstTime = false;
+		tabKeyPressedSecondTime = false;
+	}
+}
+#skiptocontent {
+    text-align: left;
+    z-index: 9999;
+}
+#skiptocontent a {
+    clip: rect(1px,1px,1px,1px);
+    height: 1px;
+    overflow: hidden;
+    width: 1px;
+    z-index: 9999;
+    padding: 6px;
+    position: absolute;
+    left: 0;
+    color: white;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: transparent;
+    -webkit-transition: top 1s ease-out,background 1s linear;
+    transition: top 1s ease-out,background 1s linear;
+}
+#skiptocontent a:focus, #skiptocontent a:active {
+    clip: auto;
+    height: auto;
+    overflow: visible;
+    width: auto;
+    position: absolute;
+    left: 0;
+    background: #2073d9;
+    outline: 0;
+    -webkit-transition: top .1s ease-in,background .5s linear;
+    transition: top .1s ease-in,background .5s linear;
+    font-size: 16px;
+    font-family: "almaden_sansregular";
+}
+.ez__tiktok .tiktok {background-image: url(https://explore.zoom.us/media/icon-tiktok-white.svg) !important;background-repeat: no-repeat !important;background-color: rgba(255,255,255,0.1)!important;border-radius: 999px;}
+.ez__tiktok:hover .tiktok {background-color: rgba(38, 39, 90, 1) !important;}
+function get_ga_clientid(){
+    var cookie = {};
+    document.cookie.split(';').forEach(function(el){
+        var splitCookie = el.split('=');
+        var key = splitCookie[0].trim();
+        var value =splitCookie[1];
+        cookie[key] = value;
+    });
+    return cookie["_ga"].substring(6);
+}
+(function() {
+   /** added script to catch keyboard event **/
+   document.body.addEventListener('keydown', function() {
+  document.body.classList.add('is-keyboard-event');
+});
+document.body.addEventListener('mousedown', function() {
+  document.body.classList.remove('is-keyboard-event');
+});
+   /** added script to bring focus on coveo search string - Start **/
+   var coveoFlyoutButton = document.querySelectorAll('.FlyoutButton')  !== null;
+   if(coveoFlyoutButton) {
+       var flyoutButton = document.querySelector('.FlyoutButton');
+       flyoutButton.setAttribute("tabindex", "0");
+   }
+    /** added script to bring focus on coveo search string - End **/
+   if(window.innerWidth > 768) {
+        $("header").addClass('open-mobilemenu');
+    }
+    // Mega Menu Click Event
+    var openItem = document.querySelectorAll('.ez__dropdown-toggle');
+    for (var i = 0; i < openItem.length; i++) {
+        openItem[i].addEventListener('click', function(event) {
+            var element = this;
+            if(element.classList.contains('active')){
+                $('.ez__xsScrollableContent > ul > li').removeClass('active');
+                $('.ez__dropdown-toggle').removeClass('active');
+            } else {
+                $('.ez__xsScrollableContent > ul > li').removeClass('active');
+                $(element).parent().addClass('active');
+                $('.ez__dropdown-toggle').removeClass('active');
+                element.classList.add('active');
+                if(window.innerWidth >= 768) {
+                    setMegaMenuHeading();
+                }
+            }
+        });
+    }
+    // End
+
+    // Mega Menu Head block height
+    const maxHeight = function(elems){
+        return Math.max.apply(null, elems.map(function ()
+        {
+            return $(this).outerHeight();
+        }).get());
+    }
+    function setMegaMenuHeading() {
+        var headBlocks = ['ez__megaProduct','ez__megaSolutions','ez__megaResources'];
+        for(var i=0; i<headBlocks.length; i++) {
+            var megaMenuHead = maxHeight($("."+headBlocks[i]+" .ez__megaMenuItemHead"));
+            $("."+headBlocks[i]+" .ez__megaMenuItemHead").css('min-height', megaMenuHead+'px');
+        }
+    }
+    // End
+    
+    // Burger Menu Click Event
+    $('#nav-icon').click(function(){
+		$(this).toggleClass('open');
+        $(this).parent().parent().toggleClass('menu-open');
+$("header").toggleClass('open-mobilemenu');
+	});
+    // End
+
+    // Developer notes
+    $(".ez__controls button").on('click', function(){
+        $(".ez__controls button").removeClass('active');
+        $(this).addClass('active');
+        $('.ez__signedOutItems, .ez__signedInItems').css('display', 'none');
+        var view = $(this).data('view');
+        $('.'+view).css('display', 'flex');
+    });
+    // End 
+
+    // Close already open dropdown 
+    var container = document.getElementsByClassName('ez__navBar')[0];
+    document.addEventListener('click', function( event ) {
+        if (container !== event.target && !container.contains(event.target)) {    
+            $('.ez__dropdown-toggle, .ez__xsScrollableContent > ul > li').removeClass('active');
+        }
+    });
+    // End 
+
+    $(window).resize(function() {
+        $('.ez__dropdown-toggle, .ez__xsScrollableContent > ul > li').removeClass('active');
+if(window.innerWidth > 768) {
+            $("header").addClass('open-mobilemenu');
+        } else {
+            $("header").removeClass('open-mobilemenu');
+        }
+    });
+
+// Update the Sticky Class
+$(window).scroll(function(){
+  var header= $('header'),
+      scroll = $(window).scrollTop();
+
+  if (scroll >= 200) header.addClass('sticky');
+  else header.removeClass('sticky');
+});
+
+})();
+/* utm code */
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+if (getCookie('_zm_visitor_guid') != 'undefined' && getCookie('_zm_visitor_guid') != null)
+{ 
+        var mktID = document.createElement("input");
+        mktID.setAttribute("type", "hidden");
+        mktID.setAttribute("name", "marketing_id");
+        mktID.setAttribute("id", "marketing_id");
+var elementExists = document.getElementsByClassName('FormStandard ');
+        if (elementExists.length != 0){
+        document.querySelector('.FormStandard ').appendChild(mktID);	
+        var activeGroups = (window.OnetrustActiveGroups || '').split(',');
+        activeGroups = activeGroups.filter(function (v) {
+        return v !== '';
+        });
+        if (activeGroups.indexOf('C0002') > -1){
+        document.querySelector('#marketing_id').setAttribute('value', getCookie('_zm_visitor_guid'));
+        }
+}
+	
+} 
+else 
+{
+ //no cookie exists
+}
+var elementExists = document.getElementsByClassName('FormStandard ');
+        if (elementExists.length !=0){
+var utm_campaign = document.createElement("input");
+utm_campaign.setAttribute("type", "hidden");
+utm_campaign.setAttribute("name", "utm_campaign");
+utm_campaign.setAttribute("id", "utm_campaign");
+utm_campaign.setAttribute("value", "null");
+document.querySelector('.FormStandard ').appendChild(utm_campaign);	
+
+var utm_content = document.createElement("input");
+utm_content.setAttribute("type", "hidden");
+utm_content.setAttribute("name", "utm_content");
+utm_content.setAttribute("id", "utm_content");
+utm_content.setAttribute("value", "null");
+document.querySelector('.FormStandard ').appendChild(utm_content);	
+
+var utm_medium = document.createElement("input");
+utm_medium.setAttribute("type", "hidden");
+utm_medium.setAttribute("name", "utm_medium");
+utm_medium.setAttribute("id", "utm_medium");
+utm_medium.setAttribute("value", "null");
+document.querySelector('.FormStandard ').appendChild(utm_medium);	
+
+var utm_source = document.createElement("input");
+utm_source.setAttribute("type", "hidden");
+utm_source.setAttribute("name", "utm_source");
+utm_source.setAttribute("id", "utm_source");
+utm_source.setAttribute("value", "null");
+document.querySelector('.FormStandard ').appendChild(utm_source);	
+
+var utm_term = document.createElement("input");
+utm_term.setAttribute("type", "hidden");
+utm_term.setAttribute("name", "utm_term");
+utm_term.setAttribute("id", "utm_term");
+utm_term.setAttribute("value", "null");
+document.querySelector('.FormStandard ').appendChild(utm_term);
+
+var zcid = document.createElement("input");
+zcid.setAttribute("type", "hidden");
+zcid.setAttribute("name", "utm_zcid");
+zcid.setAttribute("id", "utm_zcid");
+zcid.setAttribute("value", "null");
+document.querySelector('.FormStandard ').appendChild(zcid);
+}
+/* utm code */
+    function OptanonWrapper() {
+        var trustDom = document.getElementById('ot-do-not-sell');
+var trustDom = document.getElementById('ot-do-not-sell'); let langPrivacyText = [
+{language:"en",text:"Your Privacy Choices"},
+{language:"es",text:"Sus opciones de privacidad"},
+{language:"de",text:"Ihre Datenschutzeinstellung"},
+{language:"zh-cn",text:"æ¨çéç§éæ©"},
+{language:"zh-tw",text:"æ¨çé±ç§æ¬é¸æ"},
+{language:"fr",text:"Vos choix en matiÃ¨re de confidentialitÃ©"},
+{language:"pt",text:"Suas opÃ§Ãµes de privacidade"},
+{language:"ja",text:"ãã©ã¤ãã·ã¼ã®é¸æ"},
+{language:"ru",text:"ÐÐ°ÑÐ¸ Ð½Ð°ÑÑÑÐ¾Ð¹ÐºÐ¸ ÐºÐ¾Ð½ÑÐ¸Ð´ÐµÐ½ÑÐ¸Ð°Ð»ÑÐ½Ð¾ÑÑÐ¸"},
+{language:"ko",text:"ê°ì¸ì ë³´ ë³´í¸ ì í ì¬í­"},
+{language:"it",text:"Le tue impostazioni di privacy"},
+{language:"vi",text:"CÃ¡c lá»±a chá»n vá» quyá»n riÃªng tÆ° cá»§a báº¡n"},
+{language:"tr",text:"Gizlilik Tercihleriniz"},
+{language:"pl",text:"Ustawienia prywatnoÅci"},
+{language:"id",text:"Pilihan Privasi Anda"},
+{language:"nl",text:"Jouw privacykeuzes"},
+]; 
+var langslug = window.location.pathname.split('/')[1];
+langPrivacyText.map(function(v){if( v.language==langslug && trustDom ){ jQuery(trustDom).html('<img src="https://explore.zoom.us/media/privacyoptions.png"/>' + ' '+v.text); }});
+       /* if (trustDom) {
+          trustDom.text = "Do Not Sell My Personal Information";
+          Query(trustDom).html('<img src="https://explore.zoom.us/media/privacyoptions.png"/>' + ' Your Privacy Choices');
+        }*/
+var oneTrustConsentId = OneTrust.getDataSubjectId();
+window.oneTrustConsentId = OneTrust.getDataSubjectId();
+var activeGroups = (OnetrustActiveGroups || '').split(',');
+activeGroups = activeGroups.filter(function (v) {
+return v !== '';
+});
+
+// create `OnetrustActiveGroups` cookie
+var oneTrustActiveCookie = activeGroups.length ? activeGroups.join('') : '';
+var date = new Date();
+date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
+var expires = "; expires=" + date.toUTCString();
+document.cookie = "OnetrustActiveGroups=" + oneTrustActiveCookie + expires + "; path=/; secure=true; domain=" + ".zoom.us";
+/* utm code */
+var elementExists = document.getElementsByClassName('FormStandard ');
+        if (elementExists.length !=0){
+if (activeGroups.indexOf('C0002') > -1){
+ 
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    var queryCampaign = urlParams.get('utm_campaign');
+    var queryContent = urlParams.get('utm_content');
+    var queryMedium = urlParams.get('utm_medium');
+    var querySource = urlParams.get('utm_source');
+    var queryTerm = urlParams.get('utm_term');
+    var queryZCID = urlParams.get('zcid');
+    if(urlParams.get('utm_campaign')!='null'){
+        document.querySelector('#utm_campaign').setAttribute('value', queryCampaign);
+    }
+    if(urlParams.get('utm_content')!='null'){
+        document.querySelector('#utm_content').setAttribute('value', queryContent);
+    }
+    if(urlParams.get('utm_medium')!='null'){
+        document.querySelector('#utm_medium').setAttribute('value', queryMedium);
+    }
+    if(urlParams.get('utm_source')!='null'){
+        document.querySelector('#utm_source').setAttribute('value', querySource);
+    }
+    if(urlParams.get('utm_term')!='null'){
+        document.querySelector('#utm_term').setAttribute('value', queryTerm);
+    }
+    if(urlParams.get('zcid')!='null'){
+        document.querySelector('#utm_zcid').setAttribute('value', queryZCID);
+    }
+document.querySelector('#marketing_id').setAttribute('value', getCookie('_zm_visitor_guid'));
+}
+else{
+ document.querySelector('#utm_campaign').setAttribute('value',"");
+ document.querySelector('#utm_zcid').setAttribute('value', "");
+document.querySelector('#utm_term').setAttribute('value', "");
+document.querySelector('#utm_source').setAttribute('value', "");
+document.querySelector('#utm_medium').setAttribute('value', "");
+document.querySelector('#utm_content').setAttribute('value', "");
+document.querySelector('#marketing_id').setAttribute('value', getCookie(""));
+}
+}
+/* utm code */
+    }
+(function () {
+
+  })();
+var tags = {};
+  if (window.oneTrustConsentId) {
+  tags['onetrust_id'] = window.oneTrustConsentId;
+  }
+  if (window.zmGlobalMrktKey) {
+  tags['zm_usr_id_sha256'] = window.zmGlobalMrktKey;
+  }
+  optimizely.push({"type": "tags", "tags": tags});
+  optimizely.push({"type": "sendEvents"});
+(function () {
+   if( $("form.FormStandard").length > 0 ){ 
+   console.log("Form is available");
+   // BEGIN FORM VIEW/ABANDON TRACKING
+   var leadSource =  "";
+   if (window.location.href.indexOf("/livedemo/") > -1) {
+       leadSource = 'request demo';
+   }
+  if (window.location.href.indexOf("/gartner-ucaas/") > -1) {
+       leadSource = 'white paper';
+   }
+   if ( $('input[name="lead_source"]').length ) {
+      leadSource = $('input[name="lead_source"]').val().toLowerCase();
+   }
+    var numFields = $(".FormStandard").find('input[type="email"],input[type="text"],fieldset, select, textarea').length;
+    window.ga_formFocused = false;
+   $(".FormStandard").find('input[type="email"],input[type="text"],fieldset, select, textarea').on('focus', function() {
+	  if (!ga_formFocused) {
+	    dataLayer.push({
+	      event: 'form.view',
+	      eventCategory: 'forms',
+	      eventAction: 'form view',
+	      eventLabel: leadSource,
+	      formType: leadSource,
+	      formFields: numFields
+        });
+      }
+      ga_formFocused = true;
+    });
+    
+    $(".FormStandard").find('input[type="email"],input[type="text"],fieldset, select, textarea').on('blur', function(){
+	  var $field = $(this);
+	  dataLayer.push({
+	    event: 'form.fieldAbandoned',
+	    eventCategory: 'forms',
+	    eventAction: 'form field abandoned',
+	    eventLabel: $field.attr('name').toLowerCase() + '|' + ($field.val() ? 'has value' : 'empty'),
+	    formType: leadSource,
+	    formFields: numFields
+      });
+    });
+
+ $(".FormStandard").on("submit",async function(){
+  try {
+      /***** SHA 256 Email *****/
+       async function hash(string) {
+           const utf8 = new TextEncoder().encode(string);
+           const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+           const hashArray = Array.from(new Uint8Array(hashBuffer));
+           const hashHex = hashArray
+           .map((bytes) => bytes.toString(16).padStart(2, '0'))
+           .join('');
+            return hashHex;
+      } 
+      var email =  await hash( ( $('#email').length > 0 && ( $('#email').val() != null ) ) ? $('#email').val().toLowerCase() : "");
+      /***** SHA 256 Email *****/
+      if ( $("form.FormStandard").valid() ==  true ){
+      var country = ( $('#country').length > 0 && ( $('#country').val() != null ) ) ? $('#country').val().toLowerCase() : "";
+      var state = ( $('#state').length > 0 && ( $('#state').val() != null ) ) ? $('#state').val().toLowerCase() : "";
+      var area_of_interest = ( $('input[name="Area_of_Interest"]').length > 0 && ( $('input[name="Area_of_Interest"]').val() != null ) ) ? $('input[name="Area_of_Interest"]').val().toLowerCase() : "";
+      var emp_count = ( $('#employee_count').length > 0 && ( $('#employee_count').val() != null ) ) ? $('#employee_count').val().toLowerCase() : (( $('#00Nd0000007MFAl').length > 0 && ( $('#00Nd0000007MFAl').val() != null ) ) ? $('#00Nd0000007MFAl').val().toLowerCase() : "" );
+      dataLayer.push({
+	      event: 'form.submit',
+	      eventCategory: 'forms',
+	      eventAction: 'form submit',
+	      eventLabel: leadSource,
+	      formType: leadSource,
+	      formFields: numFields, 
+              hashEmail: email,
+	      formCountry: country,
+	      formState: state,
+	      formEmployeeCount: emp_count,
+	      formInterest: area_of_interest
+        });
+       if( $('button.FormStandard__submitButton').length > 0 && $("button.FormStandard__submitButton").is(":visible") == false) { $("button.FormStandard__submitButton").click(); }
+  } else {
+        if( $("div.FormStandard__field.has-error span.has-error.help-block").length > 0 ) { 
+                 var fields = []; 
+                $("div.FormStandard__field.has-error span.has-error.help-block").each(function(){
+                    fields.push($(this).attr("for"));
+                }); 
+              dataLayer.push({
+	          event: 'form.error',
+	          eventCategory: 'forms',
+	          eventAction: 'form error',
+	         eventLabel: leadSource + ':' + fields.join('|')
+              });
+       }
+  }
+  } catch (error) {
+    
+  }
+  });
+  }
+  })();
+try{ 
+var pageName = window.location.pathname; 
+var currentLang = pageName.split('/')[1];
+var selectorLength = jQuery("section.CStRelatedStoriesWithCTA div.containerCTA").length;
+if( ( pageName.includes("customer_stories") == true ) && ( currentLang )  && ( selectorLength > 0 ) )
+{       
+        jQuery("section.CStRelatedStoriesWithCTA div.containerCTA").find("a").each(function(){
+              var newURL = $(this).attr("href").replace("/en/","/"+currentLang+"/");
+              $(this).attr("href",newURL);
+       });
+} 
+} catch (error) {
+    
+}
+var inputClientID= document.createElement("input");
+var inputTrackingID= document.createElement("input");
+var clientIDSF = get_ga_clientid();
+
+inputClientID.setAttribute("type", "hidden");
+inputClientID.setAttribute("name", "GACLIENTID");
+inputClientID.setAttribute("id", "GACLIENTID");
+inputClientID.setAttribute("value", clientIDSF);
+//append to form element that you want.
+
+
+
+inputTrackingID.setAttribute("type", "hidden");
+inputTrackingID.setAttribute("name", "GATRACKID");
+inputTrackingID.setAttribute("id", "GATRACKID");
+inputTrackingID.setAttribute("value", "UA-29692388-1");
+//append to form element that you want .
+var formLen = document.getElementsByClassName("FormStandard ").length;
+if(formLen>0){
+document.getElementsByClassName("FormStandard ")[0].appendChild(inputTrackingID);
+document.getElementsByClassName("FormStandard ")[0].appendChild(inputClientID);
+}
+
+// pricing page language sub folders - 19/07/23
+ var cdataId = $('.dropdown-menu .active a').attr("data-locale");
+    var clanCodeArray = {
+        'en-US': 'en',
+        'es-ES': 'es',
+        'de-DE': 'de',
+        'zh-CN': 'zh-cn',
+        'zh-TW': 'zh-tw',
+        'fr-FR': 'fr',
+        'pt-PT': 'pt',
+        'jp-JP': 'ja',
+        'ru-RU': 'ru',
+        'ko-KO': 'ko',
+        'it-IT': 'it',
+        'vi-VN': 'vi',
+        'pl-PL': 'pl',
+        'tr-TR': 'tr',
+        'id-ID':'id',
+        'nl-NL':'nl',
+    }
+    var url =["download", "signup", "signin", "join", "test", "partners/registration","billing/pbx", "zoomconference","pricing"]
+    var czmLangCode = clanCodeArray[cdataId] || 'en';
+    function replaceLocaleUrl(url){
+        $(url).each(function(){ 
+                replacedStr = 'zoom.us/'+czmLangCode;
+                oldUrl = $(this).attr("href"); // Get current url
+                newurl = oldUrl.replace('zoom.us', replacedStr);
+                $(this).attr("href", newurl);
+                console.log($(this).attr("href"));
+            });
+    }
+   if(czmLangCode !== 'en'){
+        for(let i = 0; i<url.length; i++){
+        //alert(url[i]);
+          oldUrl = 'a[href*="https://zoom.us/'+url[i]+'"]';
+          replaceLocaleUrl(oldUrl);
+          oldUrlw = 'a[href*="https://www.zoom.us/'+url[i]+'"]';
+          replaceLocaleUrl(oldUrlw);
+        }
+    }
+h1{color:#000080;font-size:36px;}ul.category{padding-left:0px;}.HeaderForWysiwyg__heading {    line-height: 1.2;    font-weight: 500;    color: black;}.category li {    border-bottom: 1px solid #ececec;    border-bottom-style: dashed;    margin-bottom: 10px;    list-style: none !important;}.category {    list-style: none;    padding-left: 0;    font-size: 14px;    line-height: 2;    margin: 40px 0;}
+.WysiwygContent--ulDots ul>li>ul>li {
+    list-style: circle !important;
+}
+$(function() {  jQuery(".privacy-choice-text").text(jQuery(".privacy-choice-text").data("text"));
+jQuery("#ot-do-not-sell").html('<img src="https://explore.zoom.us/media/privacyoptions.png"/>' + ' Your Privacy Choices'); });

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Large-scale training for single image-to-3D reconstruction.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LRM: Large Reconstruction Model for Single Image to 3D</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+        "three/controls/OrbitControls": "https://unpkg.com/three@0.156.1/examples/jsm/controls/OrbitControls.js",
+        "three/libs/stats": "https://unpkg.com/three@0.156.1/examples/jsm/libs/stats.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 300px;
+      height: 300px;
+    }
+  </style>  
+</head>
+
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"> 
+            <span class="dnerf">LRM: Large Reconstruction Model<br/>for Single Image to 3D</span>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">
+              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span>
+          </div> -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://yiconghong.me/">Yicong Hong</a><sup>1,2</sup>, 
+              <a href="https://kai-46.github.io/website/">Kai Zhang</a><sup>1</sup>, 
+              <a href="https://research.adobe.com/person/jiuxiang-gu/">Jiuxiang Gu</a><sup>1</sup>, 
+              <a href="https://sai-bi.github.io/">Sai Bi</a><sup>1</sup>, 
+              <a href="https://research.adobe.com/person/yang-zhou/">Yang Zhou</a><sup>1</sup>,
+              <a href="https://research.adobe.com/person/difan-liu/">Difan Liu</a><sup>1</sup>, 
+            </span><br>
+            <span class="author-block">
+              <a href="https://research.adobe.com/person/feng-liu/">Feng Liu</a><sup>1</sup>, 
+              <a href="https://research.adobe.com/person/kalyan-sunkavalli/">Kalyan Sunkavalli</a><sup>1</sup>, 
+              <a href="https://research.adobe.com/person/trung-bui/">Trung Bui</a><sup>1</sup>, 
+              <a href="https://research.adobe.com/person/hao-tan/">Hao Tan</a><sup>1</sup>
+            </span><br>
+            <span class="author-block"><sup>1</sup><a href="https://research.adobe.com/">Adobe Research</a> &nbsp&nbsp <sup>2</sup><a href="https://cecc.anu.edu.au/">The Australian National University</a></span>
+            <br>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2311.04400"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <hr style="width:100%;height:0.7px;background-color:rgba(0, 0, 0, 0.665);margin-top:1em">
+            Create high-fidelity 3D object mesh from a single image in <strong>5 SECONDS</strong>.
+            <br>All testing images shown below are never seen by the model in training.
+            <!-- <span class="author-block"><sup>1</sup>University of Washington,</span> -->
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <!-- <div class="column has-text-centered">
+            <div class="publication-links"> -->
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper Coming Soon!</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              Code Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              Dataset Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            <!-- </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+
+      <h2 class="subsubtitle has-text-centered"> Phone Camera Captured </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_toy_giraffe_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_toy_flower_2_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_banana_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> Generated Images (Adobe Firefly) </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_firefly - a 3d model of _“a penguin_, white background, full front view_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_firefly - a light purple teddy bear, white background, 3ds max, blender_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_firefly-wood+peafowl_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_firefly - a cake with a ferris wheel on its top 31334-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_firefly - a campfire, 3d max, blender, white background, full view_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_firefly-wood_bear_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> Objaverse </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_objaverse_eval-000-150-e2c3ced464f14e3b864f15871bf6d87d-00000014_rgb_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_objaverse_eval-000-152-e0e8594096f34d329906de73682e9b74-00000015_rgb_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_objaverse_eval-000-157-d748764d47104f049c0ea10c0880c35b-00000027_rgb_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> ImageNet </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n04380533_5103-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n07930864_2807-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n03710193_xxx-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n06874185_1701-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>        
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n07930864_10027-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n06874185_4994-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2> -->
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3"><center>Interactable Meshes</center></h2>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-6 is-one-third">
+          <p>Toy Giraffe</p>
+          <model-viewer src="./static/models_3d/selected_samples_final_toy_giraffe.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="180deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-6 is-one-third"> 
+          <p>Tea Cup</p>
+          <model-viewer src="./static/models_3d/selected_samples_final_imagenet_images_no_background_1024_n07930864_2807-PhotoRoom.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="180deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-6 is-one-third"> 
+          <p>Teddy Bear</p>
+          <model-viewer src="./static/models_3d/selected_samples_final_firefly - a light purple teddy bear, white background, 3ds max, blender.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="180deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>        
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-5 is-one-third">
+          <p>Wood Peafowl</p>
+          <model-viewer src="./static/models_3d/selected_samples_final_firefly-wood+peafowl.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="180deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-5 is-one-third"> 
+          <p>Cherry</p>
+          <model-viewer src="./static/models_3d/selected_samples_final_cherry-removebg-preview.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="180deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>
+        </div>
+        <div class="column pb-5 is-one-third"> 
+          <p>Toy Flower</p>
+          <model-viewer src="./static/models_3d/selected_samples_final_toy_flower_2.glb" 
+                        environment-image="./static/images/pure_grey.png"
+                        shadow-intensity="1"
+                        orientation="180deg 270deg 180deg"
+                        style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;"
+                        camera-controls touch-action="pan-y">
+          </model-viewer>        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose the first <strong>L</strong>arge <strong>R</strong>econstruction 
+            <strong>M</strong>odel (<strong>LRM</strong>) that predicts the 3D model 
+            of an object from a single input image within just 5 seconds. 
+            In contrast to many previous methods that are trained on small-scale datasets 
+            such as ShapeNet in a category-specific fashion, LRM adopts a highly scalable 
+            transformer-based architecture with 500 million learnable parameters to directly 
+            predict a neural radiance field (NeRF) from the input image. We train our model 
+            in an end-to-end manner on massive multi-view data containing around 1 million 
+            objects, including both synthetic renderings from Objaverse and real captures 
+            from MVImgNet. This combination of a high-capacity model and large-scale training 
+            data empowers our model to be highly generalizable and produce high-quality 3D 
+            reconstructions from various testing inputs including real-world in-the-wild 
+            captures and images from generative models.
+            <br><br>
+          </p>
+        </div>
+        </object>
+      </div>
+    </div>
+    <img src="./static/images/img2nerf_model_figure.jpg" alt="img2nerf_model_figure">
+    <p><strong>Figure 1</strong>. The overall architecture of LRM, a fully-differentiable 
+      transformer-based encoedr-decoder framework for single-image to NeRF reconstruction. 
+      LRM applies a pre-trained vision model (DINO) to encode the input image, 
+      where the image features are projected to a 3D triplane representation by a large 
+      transformer decoder via cross-attention, followed by a multi-layer perceptron 
+      to predict the point color and density for volumetric rendering. 
+      The entire network is trained end-to-end on around a million of 3D data 
+      by simply minimizing the difference between the rendered images and ground truth images 
+      at novel views.</p>
+    <!--/ Abstract. -->
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<!-- ar environment-image="shared-assets/environments/moon_1k.hdr" 
+poster="shared-assets/models/NeilArmstrong.webp"  -->
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3"><center>More Results</center></h2>
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+
+      <h2 class="subsubtitle has-text-centered"> Phone Camera Captured </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_vacuum_cleaner_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_body_wash_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_chair_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_addons_02_custom_images_v2_nobg_garden_shear_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_addons_02_custom_images_v2_nobg_toy_flower_3_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_addons_02_custom_images_v2_nobg_plant_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> ImageNet </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n03710193_29639-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n07930864_2647-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n04380533_240-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n07930864_2788-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n03710193_192-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n03982430_9781-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n03710193_22600-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n04069434_7-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_imagenet_images_no_background_1024_n04380533_44-PhotoRoom_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> Objaverse </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/objaverse_eval-000-154-9b919637405e4e31af2e652a5f6ceb41-00000030_rgb_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/objaverse_eval-000-154-1aa5a45694b349cc860ad026c4d039f1-00000026_rgb_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/objaverse_eval-000-152-fd4e493639f84a6db992ed56d0be5ef4-00000024_rgb_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> Google Scanned Objects </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_gso-data-CONE_SORTING_kg5fbARBwts-00000030_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_gso-data-3D_Dollhouse_Happy_Brother-00000029_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_gso-data-Design_Ideas_Drawer_Store_Organizer-00000030_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_gso-data-BAGEL_WITH_CHEESE-00000030_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_gso-data-Threshold_Bead_Cereal_Bowl_White-00000030_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_gso-data-ASICS_GELTour_Lyte_WhiteOrchidSilver-00000026_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> Amazon Berkeley Objects </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B075X4N56D-00000030_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07B4YZWKD-00000025_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07JWPM3HD-00000030_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07CB5GN4D-00000026_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07DBDZC7D-00000026_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07B4YC7LD-00000030_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07SHYPZ8D-00000026_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07QFB4HVD-00000026_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_canonical_1_view_per_object_abo-data-D-B07JKJP8MD-00000029_rgba_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="subsubtitle has-text-centered"> Others </h2>
+      <div class="columns is-1 is-multiline is-mobile">
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_spray_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_hydrant-removebg_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/i3d_videos/selected_samples_final_new_music-removebg_renderings_converted.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2> -->
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop"> -->
+
+    <!-- <div class="columns is-centered"> -->
+
+      <!-- Visual Effects. -->
+      <!-- <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Visual Effects</h2>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div> -->
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <!-- <div class="column">
+        <h2 class="title is-3">Matting</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div> -->
+    <!-- </div> -->
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Animation</h2> -->
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating states</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/> -->
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        / Re-rendering.
+
+      </div>
+    </div> -->
+    <!-- / Animation. -->
+
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  <!-- </div>
+</section> -->
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{lrm2023,
+    author    = {Anonymous},
+    title     = {LRM: Large Reconstruction Model for Single Image to 3D},
+    journal   = {Under Review},
+    year      = {2023},
+}</code></pre>
+  </div>
+</section> -->
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We borrow the source code of this website <a
+              href="https://github.com/nerfies/nerfies.github.io">from here (Nerfies)</a> which is licensed
+            under a <a rel="license"
+                       href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

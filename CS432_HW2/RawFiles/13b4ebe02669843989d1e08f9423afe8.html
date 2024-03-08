@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"761e715901",applicationID:"32397309"};;/*! For license information please see nr-loader-rum-1.252.1.min.js.LICENSE.txt */
+(()=>{var e,t,r={234:(e,t,r)=>{"use strict";r.d(t,{P_:()=>v,Mt:()=>b,C5:()=>s,DL:()=>w,OP:()=>S,lF:()=>T,Yu:()=>x,Dg:()=>m,CX:()=>c,GE:()=>_,sU:()=>R});var n=r(8632),i=r(9567);const o={beacon:n.ce.beacon,errorBeacon:n.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o);const r=(0,n.ek)(e);r&&(r.info=a[e])}const u=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var d=r(7056),l=r(50);const f="[data-nr-mask]",g=()=>{const e={mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{feature_flags:[],proxy:{assets:void 0,beacon:void 0},privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},metrics:{enabled:!0,autoStart:!0},page_action:{enabled:!0,harvestTimeSeconds:30,autoStart:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1,autoStart:!0},session_trace:{enabled:!0,harvestTimeSeconds:10,autoStart:!0},harvest:{tooManyRequestsDelay:60},session_replay:{autoStart:!0,enabled:!1,harvestTimeSeconds:60,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,inline_stylesheet:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){u(t)?e.mask_selector="".concat(t,",").concat(f):""===t||null===t?e.mask_selector=f:(0,l.Z)("An invalid session_replay.mask_selector was provided. '*' will be used.",t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){u(t)?e.block_selector+=",".concat(t):""!==t&&(0,l.Z)("An invalid session_replay.block_selector was provided and will not be used",t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,l.Z)("An invalid session_replay.mask_input_option was provided and will not be used",t)}},spa:{enabled:!0,harvestTimeSeconds:10,autoStart:!0}}},p={},h="All configuration objects require an agent identifier!";function v(e){if(!e)throw new Error(h);if(!p[e])throw new Error("Configuration for ".concat(e," was never set"));return p[e]}function m(e,t){if(!e)throw new Error(h);p[e]=(0,i.D)(t,g());const r=(0,n.ek)(e);r&&(r.init=p[e])}function b(e,t){if(!e)throw new Error(h);var r=v(e);if(r){for(var n=t.split("."),i=0;i<n.length-1;i++)if("object"!=typeof(r=r[n[i]]))return;r=r[n[n.length-1]]}return r}const y={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},A={};function w(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!A[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return A[e]}function _(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");A[e]=(0,i.D)(t,y);const r=(0,n.ek)(e);r&&(r.loader_config=A[e])}const x=(0,n.mF)().o;var E=r(385),D=r(6818);const k={buildEnv:D.Re,customTransaction:void 0,disabled:!1,distMethod:D.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(E._A?.performance?.timeOrigin||E._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+E._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof E._A.XMLHttpRequest?.prototype?.addEventListener,version:D.q4,denyList:void 0},j={};function S(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!j[e])throw new Error("Runtime for ".concat(e," was never set"));return j[e]}function R(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");j[e]=(0,i.D)(t,k);const r=(0,n.ek)(e);r&&(r.runtime=j[e])}function T(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,r)=>{"use strict";r.d(t,{D:()=>i});var n=r(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,n.Z)("Setting a Configurable requires a model to set its initial properties");const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.Z)("An error occurred while setting a property of a Configurable",e)}return r}catch(e){(0,n.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,r)=>{"use strict";r.d(t,{Re:()=>i,gF:()=>o,q4:()=>n});const n="1.252.1",i="PROD",o="CDN"},385:(e,t,r)=>{"use strict";r.d(t,{Nk:()=>d,Tt:()=>s,_A:()=>o,cv:()=>l,iS:()=>a,il:()=>n,ux:()=>c,v6:()=>i,w1:()=>u});const n="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=n?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean("hidden"===o?.document?.visibilityState),s=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),c=s&&"undefined"==typeof SharedWorker,u=((()=>{const e=o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Boolean(n&&window.document.documentMode)),d=!!o.navigator?.sendBeacon,l=Math.floor(o?.performance?.timeOrigin||o?.performance?.timing?.navigationStart||Date.now())},1117:(e,t,r)=>{"use strict";r.d(t,{w:()=>o});var n=r(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,n.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,r]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=r)}))}catch(e){(0,n.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,r)=>{"use strict";r.d(t,{L:()=>d,R:()=>c});var n=r(8325),i=r(1284),o=r(4322),a=r(3325);const s={};function c(e,t){const r={staged:!1,priority:a.p[t]||0};u(e),s[e].get(t)||s[e].set(t,r)}function u(e){e&&(s[e]||(s[e]=new Map))}function d(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature",r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if(u(e),!e||!s[e].get(t)||r)return c(t);s[e].get(t).staged=!0;const a=[...s[e]];function c(t){const r=e?n.ee.get(e):n.ee,a=o.X.handlers;if(r.backlog&&a){var s=r.backlog[t],c=a[t];if(c){for(var u=0;s&&u<s.length;++u)l(s[u],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,r){r[0].on(e,r[1])}))}))}delete a[t],r.backlog[t]=null,r.emit("drain-"+t,[])}}a.every((e=>{let[t,r]=e;return r.staged}))&&(a.sort(((e,t)=>e[1].priority-t[1].priority)),a.forEach((t=>{let[r]=t;s[e].delete(r),c(r)})))}function l(e,t){var r=e[1];(0,i.D)(t[r],(function(t,r){var n=e[0];if(r[0]===n){var i=r[1],o=e[3],a=e[2];i.apply(o,a)}}))}},8325:(e,t,r)=>{"use strict";r.d(t,{A:()=>c,ee:()=>u});var n=r(8632),i=r(2210),o=r(234);class a{constructor(e){this.contextId=e}}var s=r(3117);const c="nr@context:".concat(s.a),u=function e(t,r){var n={},s={},d={},f=!1;try{f=16===r.length&&(0,o.OP)(r).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,o){!1!==o&&(o=!0);if(u.aborted&&!i)return;t&&o&&t.emit(e,r,n);for(var a=p(n),c=v(e),d=c.length,l=0;l<d;l++)c[l].apply(a,r);var f=b()[s[e]];f&&f.push([g,e,r,a]);return a},get:m,listeners:v,context:p,buffer:function(e,t){const r=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[n,i]=e;s[i]=t,t in r||(r[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:r,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function h(e,t){n[e]=v(e).concat(t)}function v(e){return n[e]||[]}function m(t){return d[t]=d[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),d=(0,n.fP)();function l(){u.aborted=!0,Object.keys(u.backlog).forEach((e=>{delete u.backlog[e]}))}d.ee||(d.ee=u)},5546:(e,t,r)=>{"use strict";r.d(t,{E:()=>n,p:()=>i});var n=r(8325).ee.get("handle");function i(e,t,r,i,o){o?(o.buffer([e],i),o.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},4322:(e,t,r)=>{"use strict";r.d(t,{X:()=>o});var n=r(5546);o.on=a;var i=o.handlers={};function o(e,t,r,o){a(o||n.E,i,e,t,r)}function a(e,t,r,i,o){o||(o="feature"),e||(e=n.E);var a=t[o]=t[o]||{};(a[r]=a[r]||[]).push([e,i])}},3239:(e,t,r)=>{"use strict";r.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var n=r(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};n._A.addEventListener("test",null,e),n._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(r,n))}function c(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(r,n))}},3117:(e,t,r)=>{"use strict";r.d(t,{a:()=>n});const n=(0,r(4402).Rl)()},4402:(e,t,r)=>{"use strict";r.d(t,{Rl:()=>a,ky:()=>s});var n=r(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n._A?.crypto||n._A?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map((e=>"x"===e?o(t,r++).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=n._A?.crypto||n._A?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var s=0;s<e;s++)a.push(o(r,i++).toString(16));return a.join("")}},7056:(e,t,r)=>{"use strict";r.d(t,{Bq:()=>n,Hb:()=>o,IK:()=>c,oD:()=>i,uT:()=>s,wO:()=>a});const n="NRBA",i=144e5,o=18e5,a={PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},s={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},c={OFF:0,FULL:1,ERROR:2}},7894:(e,t,r)=>{"use strict";function n(){return Math.round(performance.now())}r.d(t,{z:()=>n})},50:(e,t,r)=>{"use strict";function n(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}r.d(t,{Z:()=>n})},2825:(e,t,r)=>{"use strict";r.d(t,{N:()=>d,T:()=>l});var n=r(8325),i=r(5546),o=r(3325),a=r(385);const s="newrelic";const c={stn:[o.D.sessionTrace],err:[o.D.jserrors,o.D.metrics],ins:[o.D.pageAction],spa:[o.D.spa],sr:[o.D.sessionReplay,o.D.sessionTrace]},u=new Set;function d(e,t){const r=n.ee.get(t);e&&"object"==typeof e&&(u.has(t)||(Object.entries(e).forEach((e=>{let[t,n]=e;c[t]?c[t].forEach((e=>{n?(0,i.p)("feat-"+t,[],void 0,e,r):(0,i.p)("block-"+t,[],void 0,e,r),(0,i.p)("rumresp-"+t,[Boolean(n)],void 0,e,r)})):n&&(0,i.p)("feat-"+t,[],void 0,void 0,r),l[t]=Boolean(n)})),Object.keys(c).forEach((e=>{void 0===l[e]&&(c[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,r))),l[e]=!1)})),u.add(t),function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};try{a._A.dispatchEvent(new CustomEvent(s,{detail:e}))}catch(e){}}({loaded:!0})))}const l={}},2210:(e,t,r)=>{"use strict";r.d(t,{X:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1284:(e,t,r)=>{"use strict";r.d(t,{D:()=>n});const n=(e,t)=>Object.entries(e||{}).map((e=>{let[r,n]=e;return t(r,n)}))},4351:(e,t,r)=>{"use strict";r.d(t,{P:()=>o});var n=r(8325);const i=()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,r)=>{"use strict";r.d(t,{KB:()=>a,b2:()=>o});var n=r(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,n.bP)("load",e,t)}function a(e){if(i())return e();(0,n.iz)("DOMContentLoaded",e)}},8632:(e,t,r)=>{"use strict";r.d(t,{EZ:()=>d,ce:()=>o,ek:()=>u,fP:()=>a,gG:()=>l,h5:()=>c,mF:()=>s});var n=r(7894),i=r(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t){let r=a();r.initializedAgents??={},t.initializedAt={ms:(0,n.z)(),date:new Date},r.initializedAgents[e]=t}function u(e){let t=a();return t.initializedAgents?.[e]}function d(e,t){a()[e]=t}function l(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},7956:(e,t,r)=>{"use strict";r.d(t,{N:()=>i});var n=r(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],r=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;(0,n.iz)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),r,i)}},3081:(e,t,r)=>{"use strict";r.d(t,{gF:()=>o,mY:()=>i,t9:()=>n,vz:()=>s,xS:()=>a});const n=r(3325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},7633:(e,t,r)=>{"use strict";r.d(t,{t:()=>n});const n=r(3325).D.pageViewEvent},9251:(e,t,r)=>{"use strict";r.d(t,{t:()=>n});const n=r(3325).D.pageViewTiming},5938:(e,t,r)=>{"use strict";r.d(t,{W:()=>i});var n=r(8325);class i{constructor(e,t,r){this.agentIdentifier=e,this.aggregator=t,this.ee=n.ee.get(e),this.featureName=r,this.blocked=!1}}},8862:(e,t,r)=>{"use strict";r.d(t,{j:()=>A});var n=r(3325),i=r(234),o=r(5546),a=r(8325),s=r(7894),c=r(8e3),u=r(3960),d=r(385),l=r(50),f=r(3081),g=r(8632);const p=["setErrorHandler","finished","addToTrace","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion","start","recordReplay","pauseReplay"],h=["setErrorHandler","finished","addToTrace","addRelease"];function v(){const e=(0,g.gG)();p.forEach((t=>{e[t]=function(){for(var r=arguments.length,n=new Array(r),i=0;i<r;i++)n[i]=arguments[i];return function(t){for(var r=arguments.length,n=new Array(r>1?r-1:0),i=1;i<r;i++)n[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...n))})),o.length>1?o:o[0]}(t,...n)}}))}var m=r(2825);const b=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};let y=!1;function A(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},p=arguments.length>2?arguments[2]:void 0,A=arguments.length>3?arguments[3]:void 0,{init:w,info:_,loader_config:x,runtime:E={loaderType:p},exposed:D=!0}=t;const k=(0,g.gG)();_||(w=k.init,_=k.info,x=k.loader_config),(0,i.Dg)(e.agentIdentifier,w||{}),(0,i.GE)(e.agentIdentifier,x||{}),_.jsAttributes??={},d.v6&&(_.jsAttributes.isWorker=!0),(0,i.CX)(e.agentIdentifier,_);const j=(0,i.P_)(e.agentIdentifier),S=[_.beacon,_.errorBeacon];y||(j.proxy.assets&&(b(j.proxy.assets),S.push(j.proxy.assets)),j.proxy.beacon&&S.push(j.proxy.beacon),v(),(0,g.EZ)("activatedFeatures",m.T)),E.denyList=[...j.ajax.deny_list||[],...j.ajax.block_internal?S:[]],(0,i.sU)(e.agentIdentifier,E),void 0===e.api&&(e.api=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),v=p.get("tracer"),m="api-",b=m+"ixn-";function y(t,r,n,o){const a=(0,i.C5)(e);return null===r?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:r}}),_(m,n,!0,o||null===r?"session":void 0)(t,r)}function A(){}h.forEach((e=>{g[e]=_(m,e,!0,"api")})),g.addPageAction=_(m,"addPageAction",!0,n.D.pageAction),g.setCurrentRouteName=_(m,"routeName",!0,n.D.spa),g.setPageViewName=function(t,r){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(r||"http://custom.transaction")+t,_(m,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number","boolean"].includes(typeof t)||null===t)return y(e,t,"setCustomAttribute",r);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string, number or boolean type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return y("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return y("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.start=e=>{try{const t=e?"defined":"undefined";(0,o.p)(f.xS,["API/start/".concat(t,"/called")],void 0,n.D.metrics,p);const r=Object.values(n.D);if(void 0===e)e=r;else{if((e=Array.isArray(e)&&e.length?e:[e]).some((e=>!r.includes(e))))return(0,l.Z)("Invalid feature name supplied. Acceptable feature names are: ".concat(r));e.includes(n.D.pageViewEvent)||e.push(n.D.pageViewEvent)}e.forEach((e=>{p.emit("".concat(e,"-opt-in"))}))}catch(e){(0,l.Z)("An unexpected issue occurred",e)}},g.recordReplay=function(){(0,o.p)(f.xS,["API/recordReplay/called"],void 0,n.D.metrics,p),(0,o.p)("recordReplay",[],void 0,n.D.sessionReplay,p)},g.pauseReplay=function(){(0,o.p)(f.xS,["API/pauseReplay/called"],void 0,n.D.metrics,p),(0,o.p)("pauseReplay",[],void 0,n.D.sessionReplay,p)},g.interaction=function(){return(new A).get()};var w=A.prototype={createTracer:function(e,t){var r={},i=this,a="function"==typeof t;return(0,o.p)(f.xS,["API/createTracer/called"],void 0,n.D.metrics,p),(0,o.p)(b+"tracer",[(0,s.z)(),e,r],i,n.D.spa,p),function(){if(v.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],r),a)try{return t.apply(this,arguments)}catch(e){throw v.emit("fn-err",[arguments,this,e],r),e}finally{v.emit("fn-end",[(0,s.z)()],r)}}}};function _(e,t,r,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,n.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],r?null:this,i,p),r?void 0:this}}function x(){r.e(75).then(r.bind(r,7438)).then((t=>{let{setAPI:r}=t;r(e),(0,c.L)(e,"api")})).catch((()=>{(0,l.Z)("Downloading runtime APIs failed..."),(0,c.L)(e,"api",!0)}))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=_(b,e,void 0,n.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,n.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,n.D.jserrors,p)},d.il?(0,u.b2)((()=>x()),!0):x(),g}(e.agentIdentifier,A)),void 0===e.exposed&&(e.exposed=D),y=!0}},1926:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},3325:(e,t,r)=>{"use strict";r.d(t,{D:()=>n,p:()=>i});const n={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[n.pageViewEvent]:1,[n.pageViewTiming]:2,[n.metrics]:3,[n.jserrors]:4,[n.ajax]:5,[n.sessionTrace]:6,[n.pageAction]:7,[n.spa]:8,[n.sessionReplay]:9}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var o=n[e]={exports:{}};return r[e](o,o.exports,i),o.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,r)=>(i.f[r](e,t),t)),[])),i.u=e=>"nr-rum-1.252.1.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.252.1.PROD:",i.l=(r,n,o,a)=>{if(e[r])e[r].push(n);else{var s,c;if(void 0!==o)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+o){s=l;break}}if(!s){c=!0;var f={75:"sha512-coXLfM7RkXRTFzWd9lXnf/fAuVs/D91sUGj0PeykZ9LOawtrZP/2njEtfjyJtUkhEhkSa8dmiYkqP0kHTmBVFA=="};(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=r,0!==s.src.indexOf(window.location.origin+"/")&&(s.crossOrigin="anonymous"),f[a]&&(s.integrity=f[a])}e[r]=[n];var g=(t,n)=>{s.onerror=s.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(n))),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=g.bind(null,s.onerror),s.onload=g.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var o=new Promise(((r,i)=>n=e[t]=[r,i]));r.push(n[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var o=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,n[1](s)}}),"chunk-"+t,t)}};var t=(t,r)=>{var n,o,[a,s,c]=r,u=0;if(a.some((t=>0!==e[t]))){for(n in s)i.o(s,n)&&(i.m[n]=s[n]);if(c)c(i)}for(t&&t(r);u<a.length;u++)o=a[u],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},r=self["webpackChunk:NRBA-1.252.1.PROD"]=self["webpackChunk:NRBA-1.252.1.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(1926);var e=i(50);class t{#e(t){for(var r=arguments.length,n=new Array(r>1?r-1:0),i=1;i<r;i++)n[i-1]=arguments[i];if("function"==typeof this.api?.[t])return this.api[t](...n);(0,e.Z)("Call to agent api ".concat(t," failed. The API is not currently initialized."))}addPageAction(e,t){return this.#e("addPageAction",e,t)}setPageViewName(e,t){return this.#e("setPageViewName",e,t)}setCustomAttribute(e,t,r){return this.#e("setCustomAttribute",e,t,r)}noticeError(e,t){return this.#e("noticeError",e,t)}setUserId(e){return this.#e("setUserId",e)}setApplicationVersion(e){return this.#e("setApplicationVersion",e)}setErrorHandler(e){return this.#e("setErrorHandler",e)}finished(e){return this.#e("finished",e)}addRelease(e,t){return this.#e("addRelease",e,t)}start(e){return this.#e("start",e)}recordReplay(){return this.#e("recordReplay")}pauseReplay(){return this.#e("pauseReplay")}addToTrace(e){return this.#e("addToTrace",e)}setCurrentRouteName(e){return this.#e("setCurrentRouteName",e)}interaction(){return this.#e("interaction")}}var r=i(3325),n=i(234);const o=Object.values(r.D);function a(e){const t={};return o.forEach((r=>{t[r]=function(e,t){return!1!==(0,n.Mt)(t,"".concat(e,".enabled"))}(r,e)})),t}var s=i(8862);var c=i(8e3),u=i(5938),d=i(3960),l=i(385);class f extends u.W{constructor(e,t,r){let i=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,r),this.auto=i,this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,!1===(0,n.Mt)(this.agentIdentifier,"".concat(this.featureName,".autoStart"))&&(this.auto=!1),this.auto&&(0,c.R)(e,r)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate)return;if(!this.auto)return void this.ee.on("".concat(this.featureName,"-opt-in"),(()=>{(0,c.R)(this.agentIdentifier,this.featureName),this.auto=!0,this.importAggregator()}));const r=l.il&&!0===(0,n.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let o;this.onAggregateImported=new Promise((e=>{o=e}));const a=async()=>{let n;try{if(r){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,957));n=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,n))return(0,c.L)(this.agentIdentifier,this.featureName),void o(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,8582)),{Aggregate:r}=await e(this.featureName,"aggregate");this.featAggregate=new r(this.agentIdentifier,this.aggregator,t),o(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),(0,c.L)(this.agentIdentifier,this.featureName,!0),o(!1)}};l.il?(0,d.b2)((()=>a()),!0):a()}shouldImportAgg(e,t){return e!==r.D.sessionReplay||!!n.Yu.MO&&(!1!==(0,n.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplayMode))}}var g=i(7633);class p extends f{static featureName=g.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,g.t,r),this.importAggregator()}}var h=i(1117),v=i(1284);class m extends h.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,r,n,i){var o=this.getBucket(e,t,r,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,v.D)(e,(function(e,r){t[e]=b(r,t[e])})),t}(n,o.metrics),o}merge(e,t,r,n,i){var o=this.getBucket(e,t,n,i);if(o.metrics){var a=o.metrics;a.count+=r.count,(0,v.D)(r,(function(e,t){if("count"!==e){var n=a[e],i=r[e];i&&!i.c?a[e]=b(i.t,n):a[e]=function(e,t){if(!t)return e;t.c||(t=y(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=r}storeMetric(e,t,r,n){var i=this.getBucket(e,t,r);return i.stats=b(n,i.stats),i}getBucket(e,t,r,n){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:r||{}},n&&(i.custom=n)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},r="",n=!1,i=0;i<e.length;i++)t[r=e[i]]=A(this.aggregatedData[r]),t[r].length&&(n=!0),delete this.aggregatedData[r];return n?t:null}}function b(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=y(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function y(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function A(e){return"object"!=typeof e?[]:(0,v.D)(e,w)}function w(e,t){return t}var _=i(8632),x=i(4402),E=i(4351);var D=i(5546),k=i(7956),j=i(3239),S=i(7894),R=i(9251);class T extends f{static featureName=R.t;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,R.t,r),l.il&&((0,k.N)((()=>(0,D.p)("docHidden",[(0,S.z)()],void 0,R.t,this.ee)),!0),(0,j.bP)("pagehide",(()=>(0,D.p)("winPagehide",[(0,S.z)()],void 0,R.t,this.ee))),this.importAggregator())}}var I=i(3081);class P extends f{static featureName=I.t9;constructor(e,t){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,r),this.importAggregator()}}new class extends t{constructor(t){let r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,x.ky)(16);super(),l._A?(this.agentIdentifier=r,this.sharedAggregator=new m({agentIdentifier:this.agentIdentifier}),this.features={},(0,_.h5)(r,this),this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(p),(0,s.j)(this,t,t.loaderType||"agent"),this.run()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,n.C5)(this.agentIdentifier),init:(0,n.P_)(this.agentIdentifier),loader_config:(0,n.DL)(this.agentIdentifier),runtime:(0,n.OP)(this.agentIdentifier)}}run(){try{const t=a(this.agentIdentifier),n=[...this.desiredFeatures];n.sort(((e,t)=>r.p[e.featureName]-r.p[t.featureName])),n.forEach((n=>{if(t[n.featureName]||n.featureName===r.D.pageViewEvent){const i=function(e){switch(e){case r.D.ajax:return[r.D.jserrors];case r.D.sessionTrace:return[r.D.ajax,r.D.pageViewEvent];case r.D.sessionReplay:return[r.D.sessionTrace];case r.D.pageViewTiming:return[r.D.pageViewEvent];default:return[]}}(n.featureName);i.every((e=>t[e]))||(0,e.Z)("".concat(n.featureName," is enabled but one or more dependent features has been disabled (").concat((0,E.P)(i),"). This may cause unintended consequences or missing data...")),this.features[n.featureName]=new n(this.agentIdentifier,this.sharedAggregator)}}))}catch(t){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",t);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,_.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}}({features:[p,T,P],loaderType:"lite"})})()})();</script>
+<meta name="description" content="The Investor Relations website contains information about Zoom Video Communications, Inc.&#039;s business for stockholders, potential investors, and financial analysts." />
+<link rel="canonical" href="https://investors.zoom.us/investor-relations/" />
+<link rel="shortlink" href="http://investors.zoom.us/" />
+<meta name="referrer" content="no-referrer" />
+<meta property="og:site_name" content="Zoom Video Communications, Inc." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://investors.zoom.us/investor-relations" />
+<meta property="og:title" content="Investor Relations - Zoom Video Communications, Inc." />
+<meta property="og:description" content="The Investor Relations website contains information about Zoom Video Communications, Inc.&#039;s business for stockholders, potential investors, and financial analysts." />
+<meta property="og:image" content="https://investors.zoom.us/static-files/cf157162-f10b-492c-b4ba-777be632716d" />
+<meta name="twitter:image" content="https://investors.zoom.us/static-files/cf157162-f10b-492c-b4ba-777be632716d" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/sites/g/files/knoqqb71746/files/favicon_ZM_container_color-RGB.png" type="image/png" />
+<link rel="alternate" hreflang="en" href="https://investors.zoom.us/" />
+
+    <title>Investor Relations | Zoom Video Communications, Inc.</title>
+    <link rel="stylesheet" media="all" href="/sites/g/files/knoqqb71746/files/css/css_uIm2MKAk4V75IWo8Hf7JMMcWCuhfyxtOAryo2iJDXXI.css?delta=0&amp;language=en&amp;theme=nir_pid3306&amp;include=eJyVUm1uwjAMvVBppiHtHtMOELmJBx6pzRwHxk4_t0OCMvYDRUrs9178kZhJY9phJhONGczXULCGi9mxS0bQHdosiEORtAsjAkfFJOOI7DgJx7QFtX_0wFBO1aK6lDdxAH1AXuNcS5dEMWRteyhvaDNzjfV7lY1iPdfcitHorUFYul31yDiGASrOyskIlbJevMmgJHyO__HZUE99o34vlaZmb3GPW2Tzi46SUZm-dVGcSUtbPCBbXRlWW0QQTte1YMFkz32hQUFPf4gL4IrfOMTmOT1NY09eJ-yGGCDtBmHsTKT4-4fz2fsHtj8gsNHqvZAPh96Sy2e6BveU1-unl5AKeZ-rLYIXc495F7Eb5kh5g1YXmBxQlTJ2Cpm-YoGTNKth4c0Xjjj4v2BkMUo-v3ew_nz-M3F30X6ab-D80J1qvr82b_AHalhO_w" />
+<link rel="stylesheet" media="all" href="/sites/g/files/knoqqb71746/files/css/css_JwzeOEEcHXjK1wpm5bi-9PW9n19BSvMq5HsDy02PnlU.css?delta=1&amp;language=en&amp;theme=nir_pid3306&amp;include=eJyVUm1uwjAMvVBppiHtHtMOELmJBx6pzRwHxk4_t0OCMvYDRUrs9178kZhJY9phJhONGczXULCGi9mxS0bQHdosiEORtAsjAkfFJOOI7DgJx7QFtX_0wFBO1aK6lDdxAH1AXuNcS5dEMWRteyhvaDNzjfV7lY1iPdfcitHorUFYul31yDiGASrOyskIlbJevMmgJHyO__HZUE99o34vlaZmb3GPW2Tzi46SUZm-dVGcSUtbPCBbXRlWW0QQTte1YMFkz32hQUFPf4gL4IrfOMTmOT1NY09eJ-yGGCDtBmHsTKT4-4fz2fsHtj8gsNHqvZAPh96Sy2e6BveU1-unl5AKeZ-rLYIXc495F7Eb5kh5g1YXmBxQlTJ2Cpm-YoGTNKth4c0Xjjj4v2BkMUo-v3ew_nz-M3F30X6ab-D80J1qvr82b_AHalhO_w" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Palanquin+Dark&amp;display=swap" />
+<link rel="stylesheet" media="all" href="/sites/g/files/knoqqb71746/files/css/css_kbLn1nB79wNFy_K3tCGyJKpU3Qt8fx_-wcJWKgWzq2s.css?delta=3&amp;language=en&amp;theme=nir_pid3306&amp;include=eJyVUm1uwjAMvVBppiHtHtMOELmJBx6pzRwHxk4_t0OCMvYDRUrs9178kZhJY9phJhONGczXULCGi9mxS0bQHdosiEORtAsjAkfFJOOI7DgJx7QFtX_0wFBO1aK6lDdxAH1AXuNcS5dEMWRteyhvaDNzjfV7lY1iPdfcitHorUFYul31yDiGASrOyskIlbJevMmgJHyO__HZUE99o34vlaZmb3GPW2Tzi46SUZm-dVGcSUtbPCBbXRlWW0QQTte1YMFkz32hQUFPf4gL4IrfOMTmOT1NY09eJ-yGGCDtBmHsTKT4-4fz2fsHtj8gsNHqvZAPh96Sy2e6BveU1-unl5AKeZ-rLYIXc495F7Eb5kh5g1YXmBxQlTJ2Cpm-YoGTNKth4c0Xjjj4v2BkMUo-v3ew_nz-M3F30X6ab-D80J1qvr82b_AHalhO_w" />
+<link rel="stylesheet" media="print" href="/sites/g/files/knoqqb71746/files/css/css_4AO-obX8eAJ7_pIn9GomYf4DulilTc1yhhbZpLiZv6Q.css?delta=4&amp;language=en&amp;theme=nir_pid3306&amp;include=eJyVUm1uwjAMvVBppiHtHtMOELmJBx6pzRwHxk4_t0OCMvYDRUrs9178kZhJY9phJhONGczXULCGi9mxS0bQHdosiEORtAsjAkfFJOOI7DgJx7QFtX_0wFBO1aK6lDdxAH1AXuNcS5dEMWRteyhvaDNzjfV7lY1iPdfcitHorUFYul31yDiGASrOyskIlbJevMmgJHyO__HZUE99o34vlaZmb3GPW2Tzi46SUZm-dVGcSUtbPCBbXRlWW0QQTte1YMFkz32hQUFPf4gL4IrfOMTmOT1NY09eJ-yGGCDtBmHsTKT4-4fz2fsHtj8gsNHqvZAPh96Sy2e6BveU1-unl5AKeZ-rLYIXc495F7Eb5kh5g1YXmBxQlTJ2Cpm-YoGTNKth4c0Xjjj4v2BkMUo-v3ew_nz-M3F30X6ab-D80J1qvr82b_AHalhO_w" />
+
+    <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="/sites/g/files/knoqqb71746/files/js/js_SQ0I_ht2hskZeLXpbbu1i5dzyGDU8Zzgvk5v56RTCiY.js?scope=header&amp;delta=1&amp;language=en&amp;theme=nir_pid3306&amp;include=eJyVUm1uwjAMvVBppiHtHtMOELmJBx6pzRwHxk4_t0OCMvYDRUrs9178kZhJY9phJhONGczXULCGi9mxS0bQHdosiEORtAsjAkfFJOOI7DgJx7QFtX_0wFBO1aK6lDdxAH1AXuNcS5dEMWRteyhvaDNzjfV7lY1iPdfcitHorUFYul31yDiGASrOyskIlbJevMmgJHyO__HZUE99o34vlaZmb3GPW2Tzi46SUZm-dVGcSUtbPCBbXRlWW0QQTte1YMFkz32hQUFPf4gL4IrfOMTmOT1NY09eJ-yGGCDtBmHsTKT4-4fz2fsHtj8gsNHqvZAPh96Sy2e6BveU1-unl5AKeZ-rLYIXc495F7Eb5kh5g1YXmBxQlTJ2Cpm-YoGTNKth4c0Xjjj4v2BkMUo-v3ew_nz-M3F30X6ab-D80J1qvr82b_AHalhO_w"></script>
+
+    <script async nonce="${csp_script_nonce}" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="b0bfa2ae-4058-4aef-8632-a5281ce4464a"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KT578TJ');</script>
+<!-- End Google Tag Manager -->
+
+  </head>
+  <body class="body-sidebars-none nir-node nir-node--type-nir-landing-page nir-node--5806 path-frontpage page-node-type-nir-landing-page">
+    <div id="skip">
+      <a class="visually-hidden focusable skip-link" href="#main-menu">
+        Skip to main navigation
+      </a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <header id="main-header">
+    <nav class="navbar px-sm-5 navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://zoom.us/" aria-label="Back to Zoom Video Communications, Inc.">
+                <img src="/sites/g/files/knoqqb71746/themes/site/nir_pid3306/dist/images/logo_ZM_wordmark_bloom-RGB.png" alt="Zoom Video Communications, Inc. Logo">
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#sidenav" aria-controls="sidenav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+                        <div class="collapse navbar-collapse" id="navbarToggler">
+                                    
+
+
+                              <ul data-block-uuid="bb8dcf80-a34f-49cf-9769-7c6d712adef0" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+          <a href="https://zoom.us/join" class="nav-link text-a pe-3">Join a Meeting</a>
+                  </li>
+              <li class="nav-item">
+          <a href="https://zoom.us/signin" class="nav-link text-a pe-3">Sign In</a>
+                  </li>
+              <li class="nav-item">
+          <a href="https://zoom.us/signup" class="btn btn-primary">Sign Up, Its Free</a>
+                  </li>
+          </ul>
+  
+
+
+    
+                            </div>
+        </div>
+    </nav>
+</header>
+<main>
+        <div class="container-fluid">
+        <div class="row flex-nowrap ">
+            <div id="sidenav" class="col-md-12 collapse col-xxl-3 d-xl-block px-sm-5 col-12 sidebar px-0 bg-light collapse">
+                <div class="d-flex flex-column p-3 text-white nav">
+                    <div>
+                                                    
+
+
+                              <ul data-block-uuid="63a3401e-3918-4f42-9162-e292dd97cd35" class="nav flex-column" id="ir-side-nav">
+                          <li class="investor-overview">
+          <a href="/" class="nav-link px-0 align-middle small-text fw-black is-active" title="Main Investor Relations Page" data-drupal-link-system-path="&lt;front&gt;">Investor Overview</a>
+                  </li>
+                      <li class="news--events">
+          <a href="/news-events/press-releases" class="nav-link py-3 px-0 align-middle small-text fw-black" data-drupal-link-system-path="node/5816">News &amp; Events</a>
+                                    <ul class="nav border-start flex-column">
+                          <li class="press-releases pb-2">
+          <a href="/news-events/press-releases" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5816">Press Releases</a>
+                  </li>
+                      <li class="events pb-2">
+          <a href="/news-events/events" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5826">Events</a>
+                  </li>
+          </ul>
+  
+                  </li>
+                      <li class="stock-information">
+          <a href="/stock-information/stock-quote-chart" class="nav-link py-3 px-0 align-middle small-text fw-black" data-drupal-link-system-path="node/5911">Stock Information</a>
+                                    <ul class="nav border-start flex-column">
+                          <li class="stock-quote--chart pb-2">
+          <a href="/stock-information/stock-quote-chart" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5911">Stock Quote &amp; Chart</a>
+                  </li>
+                      <li class="historic-price-lookup pb-2">
+          <a href="/stock-information/historic-price-lookup" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5921">Historic Price Lookup</a>
+                  </li>
+                      <li class="investment-calculator pb-2">
+          <a href="/stock-information/investment-calculator" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5926">Investment Calculator</a>
+                  </li>
+                      <li class="analyst-coverage pb-2">
+          <a href="/analyst-coverage" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5896">Analyst Coverage</a>
+                  </li>
+          </ul>
+  
+                  </li>
+                      <li class="governance--responsibility">
+          <a href="/corporate-governance" class="nav-link py-3 px-0 align-middle small-text fw-black" data-drupal-link-system-path="node/5836">Governance &amp; Responsibility</a>
+                                    <ul class="nav border-start flex-column">
+                          <li class="management--bod pb-2">
+          <a href="https://explore.zoom.us/en/team/" class="nav-link py-0 pl-3 fw-normal small-text">Management &amp; BOD</a>
+                  </li>
+                      <li class="corporate-governance pb-2">
+          <a href="/corporate-governance" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5836">Corporate Governance</a>
+                  </li>
+                      <li class="esg-responsibility pb-2">
+          <a href="https://explore.zoom.us/docs/en-us/zoom-esg-framework.html" class="nav-link py-0 pl-3 fw-normal small-text">ESG Responsibility</a>
+                  </li>
+          </ul>
+  
+                  </li>
+                      <li class="financial-information">
+          <a href="/financial-information/annual-reports" class="nav-link py-3 px-0 align-middle small-text fw-black" data-drupal-link-system-path="node/5881">Financial Information</a>
+                                    <ul class="nav border-start flex-column">
+                          <li class="annual-report-and-proxy pb-2">
+          <a href="/financial-information/annual-reports" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5881">Annual Report and Proxy</a>
+                  </li>
+                      <li class="sec-filings pb-2">
+          <a href="/sec-filings" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/6016">SEC Filings</a>
+                  </li>
+                      <li class="quarterly-results pb-2">
+          <a href="/financial-information/quarterly-results" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5986">Quarterly Results</a>
+                  </li>
+          </ul>
+  
+                  </li>
+                      <li class="resources">
+          <a href="/resources/investor-faqs" class="nav-link py-3 px-0 align-middle small-text fw-black" data-drupal-link-system-path="node/5941">Resources</a>
+                                    <ul class="nav border-start flex-column">
+                          <li class="investor-faqs pb-2">
+          <a href="/resources/investor-faqs" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5941">Investor FAQs</a>
+                  </li>
+                      <li class="investor-contacts pb-2">
+          <a href="/resources/investor-contacts" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5981">Investor Contacts</a>
+                  </li>
+                      <li class="email-alerts pb-2">
+          <a href="/resources/email-alerts" class="nav-link py-0 pl-3 fw-normal small-text" data-drupal-link-system-path="node/5946">Email Alerts</a>
+                  </li>
+          </ul>
+  
+                  </li>
+          </ul>
+  
+
+
+    
+                                            </div>
+                </div>
+            </div>
+            <div class="col px-0">
+                <section class="px-3 py-3 px-sm-5 py-sm-5 bg-b">
+                    <div class="row max-width-1080">
+                                                    <div class="col-xl-6">
+                                                                      <div class="region region-hero">
+    <div id="block-gbherobannertextoverview" class="block-content--nir-global-block block-content--nir-global-block--9696 block--block-contentd2a4bb5f-11b0-40e5-a49e-023eeecf4785 block--block-contentd2a4bb5f-11b0-40e5-a49e-023eeecf4785--5806 block--hero--block-content--d2a4bb5f-11b0-40e5-a49e-023eeecf4785 block--hero--block-content--d2a4bb5f-11b0-40e5-a49e-023eeecf4785--5806 block--204b4f73-1424-4fac-afe8-4a18b754cd1c block--204b4f73-1424-4fac-afe8-4a18b754cd1c--5806 block block-block-content block-block-contentd2a4bb5f-11b0-40e5-a49e-023eeecf4785">
+  
+    
+      
+            <div class="field field--name-field-nir-global-block-node field--type-entity-reference field--label-hidden field__item">  
+            <div class="field field--name-field-nir-global-block-body field--type-text-long field--label-hidden field__item"><h1 class="h3 text-a text-uppercase letter-spacing-2 fw-bold">Investor Relations</h1>
+                            <h2 class="h1 text-white">Making Communications Frictionless and Secure</h2>
+                            <p class="text-white fw-normal">Zoom is for you. We help you express ideas, connect to others, and build toward a future limited only by your imagination. Our frictionless communications platform is the only one that started with video as its foundation, and we have set the standard for innovation ever since. That is why we are an intuitive, scalable, and secure choice for large enterprises, small businesses, and individuals alike. Founded in 2011, Zoom is publicly traded (NASDAQ:ZM) and headquartered in San Jose, California.</p></div>
+      
+</div>
+      
+  </div>
+
+  </div>
+
+                                                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+                                <div class="d-flex">
+                                    <div class="d-none d-sm-block">
+                                        <img src="/sites/g/files/knoqqb71746/themes/site/nir_pid3306/dist/images/hero-2.png" alt="Man at his desktop">
+                                    </div>
+                                    <div class="">
+                                        <img src="/sites/g/files/knoqqb71746/themes/site/nir_pid3306/dist/images/hero-1.png" alt="Video Conference">
+                                        <div class="px-3" id="hero-stock">
+                                                                                              <div class="region region-hero-stock">
+    <div id="block-stockquote" class="block--market-data-block__stock-quote block--market-data-block__stock-quote--5806 block--hero-stock--market-data-block__stock-quote block--hero-stock--market-data-block__stock-quote--5806 block--037ab835-a5be-40a5-9c5f-08a601760334 block--037ab835-a5be-40a5-9c5f-08a601760334--5806 block block-nir-market-data-block block-market-data-block__stock-quote">
+  
+    
+      <div class='stock-quote stock-quote__short'>
+    <div class="quote-wrapper">
+                                                                            <div class="bg-a p-4 stock-price text-white col-12">
+                <p class="text-uppercase mb-0 fw-bold"></p>
+                <h2 class="mb-0 fw-bold"> <span></span> </h2>
+                <small class="fw-bold">Data as of </small>
+            </div>
+            </div>
+</div>
+  </div>
+
+  </div>
+
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+                </section>
+                    <div id="ndq-content" class="ndq-5806">
+          <div class="region region-content">
+    <div id="block-nir-pid3306-websitenoticeblock" class="block--website-notice-block block--website-notice-block--5806 block--content--website-notice-block block--content--website-notice-block--5806 block--9214aea5-3aea-4df1-a6fa-cdc8b1ab8df9 block--9214aea5-3aea-4df1-a6fa-cdc8b1ab8df9--5806 block block-nir-website-notices block-website-notice-block">
+  
+    
+      
+  </div>
+<div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-nir-pid3306-content" class="block--system-main-block block--system-main-block--5806 block--content--system-main-block block--content--system-main-block--5806 block--3bfb58db-78af-4901-997b-3935ced44ff6 block--3bfb58db-78af-4901-997b-3935ced44ff6--5806 block block-system block-system-main-block">
+  
+    
+      <article class="node node--type-nir_landing_page node--view-mode-full clearfix">
+    <div>
+    <section class="px-5" id="at-glance" style="background: linear-gradient(180deg, #0D2A4C 49.35%, #FFFFFF 49.36%);">
+    <div class="max-width-1080">
+        <div class="block-region-column1"><div class="block-content--nir-global-block block-content--nir-global-block--6306 block--block-contentee616742-366c-45db-aedc-8bb69474c54c block--block-contentee616742-366c-45db-aedc-8bb69474c54c--5806 block--column1--block-content--ee616742-366c-45db-aedc-8bb69474c54c block--column1--block-content--ee616742-366c-45db-aedc-8bb69474c54c--5806 block--6d20056e-178f-4a91-89e0-633637630c26 block--6d20056e-178f-4a91-89e0-633637630c26--5806 block block-block-content block-block-contentee616742-366c-45db-aedc-8bb69474c54c">
+  
+    
+      
+            <div class="field field--name-field-nir-global-block-node field--type-entity-reference field--label-hidden field__item">  
+            <div class="field field--name-field-nir-global-block-body field--type-text-long field--label-hidden field__item"><div class="card-container p-3 p-sm-5">
+<div class="row">
+<div class="col-lg-6 p-3 p-sm-0 d-sm-inline-flex">
+<div class="d-flex align-items-center"><svg fill="none" height="60" viewbox="0 0 61 60" width="61" xmlns="http://www.w3.org/2000/svg"><path d="M40.1665 60C51.2122 60 60.1665 51.0457 60.1665 40C60.1665 28.9543 51.2122 20 40.1665 20C29.1208 20 20.1665 28.9543 20.1665 40C20.1665 51.0457 29.1208 60 40.1665 60Z" fill="#BFDBB8"></path><path d="M8.69827 18.6143H5.5" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M13.6163 6.74127L12.4883 5.61328" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M10.945 10.2188L8.17847 8.61963" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M10.945 27.0098L8.17847 28.6089" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M25.4893 18.6143H37.4828" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M37.3628 30.4878L38.4908 31.6158" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M13.6163 30.4878L12.4883 31.6158" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M37.3628 6.74127L38.4908 5.61328" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M9.26691 22.9639L7.7229 23.3719" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M9.26691 14.2649L7.7229 13.8569" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M40.0334 27.0098L42.7999 28.6089" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M40.0334 10.2188L42.7999 8.61963" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M25.4893 25.8104C29.4636 25.8104 32.6854 22.5886 32.6854 18.6143C32.6854 14.64 29.4636 11.4182 25.4893 11.4182C21.515 11.4182 18.2932 14.64 18.2932 18.6143C18.2932 22.5886 21.515 25.8104 25.4893 25.8104Z" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M25.4897 19.4147C25.9315 19.4147 26.2897 19.0565 26.2897 18.6147C26.2897 18.1729 25.9315 17.8147 25.4897 17.8147C25.0479 17.8147 24.6897 18.1729 24.6897 18.6147C24.6897 19.0565 25.0479 19.4147 25.4897 19.4147Z" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M40.6809 15.416L37.4827 18.6143L40.6809 21.8126H45.4784L43.8792 18.6143L45.4784 15.416H40.6809Z" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M31.0863 37.0044V42.6014C31.0863 43.2376 30.8336 43.8477 30.3837 44.2975C29.9339 44.7473 29.3238 45.0001 28.6876 45.0001H22.291C21.6549 45.0001 21.0448 44.7473 20.5949 44.2975C20.1451 43.8477 19.8923 43.2376 19.8923 42.6014V37.0044" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M19.0928 41.2014L31.8859 40.4019" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M38.9939 17.103C38.7414 14.8136 37.9113 12.6258 36.5816 10.7451C35.2518 8.86447 33.4659 7.35254 31.3915 6.35133C29.3172 5.35011 27.0225 4.89245 24.7227 5.02128C22.423 5.15012 20.1938 5.86125 18.2442 7.08789C16.2947 8.31454 14.6889 10.0165 13.5775 12.0339C12.4661 14.0514 11.8855 16.3181 11.8904 18.6214C11.8953 20.9248 12.4854 23.1891 13.6053 25.2018C14.7253 27.2145 16.3383 28.9096 18.293 30.128V35.4052C18.293 35.8293 18.4615 36.236 18.7614 36.5359C19.0613 36.8358 19.468 37.0043 19.8921 37.0043H31.0861C31.5102 37.0043 31.917 36.8358 32.2169 36.5359C32.5168 36.236 32.6852 35.8293 32.6852 35.4052V30.128C34.4223 29.0436 35.8919 27.5808 36.9843 25.8487C38.0767 24.1167 38.7637 22.1602 38.9939 20.1254" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+
+<div class="p-0 p-sm-3">
+<h3 class="text-b">Our mission &amp; vision</h3>
+
+<p class="mb-0 fw-normal">One platform delivering limitless human connection</p>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-6 p-3 p-sm-0 d-sm-inline-flex">
+<div class="d-flex align-items-center"><svg fill="none" height="60" viewbox="0 0 59 60" width="59" xmlns="http://www.w3.org/2000/svg"><path d="M38.5 60C49.5457 60 58.5 51.0457 58.5 40C58.5 28.9543 49.5457 20 38.5 20C27.4543 20 18.5 28.9543 18.5 40C18.5 51.0457 27.4543 60 38.5 60Z" fill="#ABD1FF"></path><path d="M24.8643 44.3352C24.3974 44.772 23.779 45.0102 23.1397 44.9995C22.5004 44.9889 21.8902 44.7302 21.4381 44.2781C20.986 43.8259 20.7273 43.2158 20.7167 42.5765C20.706 41.9372 20.9442 41.3188 21.381 40.8519L22.5479 39.6849C23.0149 39.2482 23.6333 39.0099 24.2726 39.0206C24.9119 39.0313 25.522 39.29 25.9741 39.7421C26.4262 40.1942 26.6849 40.8043 26.6956 41.4436C26.7062 42.0829 26.468 42.7013 26.0312 43.1683L24.8643 44.3352Z" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M19.6392 42.5937C19.1723 43.0305 18.5539 43.2687 17.9146 43.258C17.2753 43.2474 16.6651 42.9887 16.213 42.5366C15.7609 42.0844 15.5022 41.4743 15.4916 40.835C15.4809 40.1957 15.7191 39.5773 16.1559 39.1104L19.0645 36.2018C19.5314 35.765 20.1498 35.5268 20.7891 35.5375C21.4284 35.5481 22.0386 35.8068 22.4907 36.2589C22.9428 36.711 23.2015 37.3212 23.2122 37.9605C23.2228 38.5998 22.9846 39.2182 22.5478 39.6851L19.6392 42.5937Z" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M16.1558 39.1103C15.6889 39.5471 15.0705 39.7853 14.4312 39.7746C13.7919 39.764 13.1818 39.5053 12.7296 39.0532C12.2775 38.601 12.0188 37.9909 12.0082 37.3516C11.9975 36.7123 12.2357 36.0939 12.6725 35.627L15.5811 32.7184C16.048 32.2816 16.6664 32.0434 17.3057 32.0541C17.945 32.0647 18.5552 32.3234 19.0073 32.7755C19.4594 33.2276 19.7181 33.8378 19.7288 34.4771C19.7394 35.1164 19.5012 35.7348 19.0644 36.2017L16.1558 39.1103Z" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M13.5435 34.7561C13.0766 35.1929 12.4582 35.4311 11.8189 35.4204C11.1796 35.4098 10.5694 35.1511 10.1173 34.6989C9.66521 34.2468 9.40651 33.6367 9.39585 32.9974C9.38519 32.3581 9.62342 31.7397 10.0602 31.2728L12.0979 29.235C12.5649 28.7982 13.1833 28.56 13.8226 28.5707C14.4619 28.5813 15.072 28.84 15.5241 29.2921C15.9763 29.7442 16.235 30.3544 16.2456 30.9937C16.2563 31.633 16.0181 32.2514 15.5813 32.7183L13.5435 34.7561Z" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M29.3665 38.0916L33.8686 42.5938C34.3356 43.0305 34.954 43.2687 35.5933 43.2581C36.2326 43.2474 36.8427 42.9887 37.2948 42.5366C37.747 42.0845 38.0057 41.4744 38.0163 40.8351C38.027 40.1958 37.7888 39.5774 37.352 39.1104" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M32.8499 34.6082L37.352 39.1104C37.819 39.5471 38.4374 39.7853 39.0767 39.7747C39.716 39.764 40.3261 39.5053 40.7782 39.0532C41.2303 38.6011 41.4891 37.991 41.4997 37.3517C41.5104 36.7124 41.2722 36.094 40.8354 35.627L39.9645 34.7562" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M41.1228 28.9478L45.9124 24.1582" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M26.5974 42.2889L28.6439 44.3354C29.1108 44.7722 29.7292 45.0104 30.3685 44.9997C31.0078 44.989 31.6179 44.7303 32.0701 44.2782C32.5222 43.8261 32.7809 43.216 32.7915 42.5767C32.8022 41.9374 32.564 41.319 32.1272 40.8521" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M45.9124 5L36.3333 14.5791L47.654 25.8999L52.0082 21.5458" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M7.59581 5L17.1749 14.5791L5.85415 25.8999L1.5 21.5458" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M7.59595 24.1582L12.4116 28.9739" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M16.3042 15.45H25.0125" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M37.2041 15.45H25.0125L18.4813 21.9812C17.9509 22.5677 17.6662 23.3357 17.686 24.1262C17.7059 24.9168 18.0288 25.6694 18.588 26.2286C19.1472 26.7878 19.8998 27.1107 20.6904 27.1305C21.4809 27.1504 22.2489 26.8657 22.8354 26.3353L25.744 23.4268C26.391 22.779 27.1593 22.2652 28.0051 21.9146C28.8508 21.564 29.7573 21.3835 30.6729 21.3835C31.5884 21.3835 32.4949 21.564 33.3407 21.9146C34.1864 22.2652 34.9548 22.779 35.6018 23.4268L43.4392 31.2642C43.876 31.7312 44.1142 32.3496 44.1036 32.9889C44.0929 33.6282 43.8342 34.2383 43.3821 34.6904C42.93 35.1425 42.3199 35.4012 41.6806 35.4119C41.0413 35.4226 40.4229 35.1843 39.9559 34.7475L36.3333 31.1249" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+
+<div class="p-0 p-sm-3">
+<h3 class="text-b">Our value</h3>
+
+<p class="mb-0 fw-normal">Care: Community, Customers, Company, Teammates, Selves</p>
+</div>
+</div>
+
+<div class="col-lg-6 p-3 p-sm-0 d-sm-inline-flex">
+<div class="d-flex align-items-center"><svg fill="none" height="59" viewbox="0 0 60 59" width="60" xmlns="http://www.w3.org/2000/svg"><path d="M39.5 59C50.5457 59 59.5 50.0457 59.5 39C59.5 27.9543 50.5457 19 39.5 19C28.4543 19 19.5 27.9543 19.5 39C19.5 50.0457 28.4543 59 39.5 59Z" fill="#F4C8C2"></path><path d="M37.7156 12.7127C40.0826 12.7127 42.0015 10.7938 42.0015 8.42678C42.0015 6.05974 40.0826 4.14087 37.7156 4.14087C35.3486 4.14087 33.4297 6.05974 33.4297 8.42678C33.4297 10.7938 35.3486 12.7127 37.7156 12.7127Z" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M37.7156 31.9993V47" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M14.1433 19.1416L9.85739 14.8557L7.08227 15.5629C6.33144 15.8141 5.67836 16.2946 5.21509 16.9366C4.75182 17.5787 4.50171 18.3499 4.5 19.1416V27.7135C4.5 28.8501 4.95155 29.9403 5.75531 30.7441C6.55908 31.5478 7.64922 31.9994 8.78591 31.9994" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M14.1433 12.7127C16.5104 12.7127 18.4292 10.7938 18.4292 8.42678C18.4292 6.05974 16.5104 4.14087 14.1433 4.14087C11.7763 4.14087 9.85742 6.05974 9.85742 8.42678C9.85742 10.7938 11.7763 12.7127 14.1433 12.7127Z" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M19.5007 19.1436V45.9284C19.5007 46.2126 19.3878 46.4851 19.1868 46.6861C18.9859 46.887 18.7134 46.9999 18.4292 46.9999H9.85737C9.57319 46.9999 9.30067 46.887 9.09973 46.6861C8.89879 46.4851 8.78589 46.2126 8.78589 45.9284V21.2844" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M14.1433 31.9993V47" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M19.4951 19.1413L25.9297 8.42869M23.9096 3.3584L14.1377 19.1413" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M37.7158 19.1416L42.0017 14.8557L44.7769 15.5629C45.5277 15.8141 46.1808 16.2946 46.644 16.9366C47.1073 17.5787 47.3574 18.3499 47.3591 19.1416V27.7135C47.3591 28.8501 46.9076 29.9403 46.1038 30.7441C45.3001 31.5478 44.2099 31.9994 43.0732 31.9994" stroke="#232333" stroke-linejoin="round" stroke-width="2"></path><path d="M43.0676 21.2844V45.9284C43.0676 46.2126 42.9547 46.4851 42.7538 46.6861C42.5528 46.887 42.2803 46.9999 41.9961 46.9999H33.4243C33.1401 46.9999 32.8676 46.887 32.6667 46.6861C32.4657 46.4851 32.3528 46.2126 32.3528 45.9284V19.1415L23.9524 4.81581C23.8438 4.56559 23.7873 4.2958 23.7866 4.02299C23.7859 3.75019 23.8409 3.48012 23.9483 3.22933C24.0556 2.97853 24.213 2.75228 24.4109 2.56448C24.6087 2.37667 24.8429 2.23125 25.0989 2.13712C25.6387 1.93954 26.2336 1.956 26.7616 2.18314C27.2896 2.41028 27.7106 2.83086 27.9383 3.3586L37.7102 19.1415" stroke="#232333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+
+<div class="p-0 p-sm-3">
+<h3 class="text-b">Our culture</h3>
+
+<p class="mb-0 fw-normal">Delivering happiness</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+      
+</div>
+      
+  </div>
+</div>
+    </div>
+</section>
+
+<section class="pt-5">
+    <div class="p-5">
+        <div class="row max-width-1080">
+            <div class="col-lg-6">
+                <div class="block-region-column2"><div class="block--events block--nir-events__widget block--nir-events__widget--5806 block--column2--nir-events__widget block--column2--nir-events__widget--5806 block--9fdc82d4-4b55-42df-a5a0-922505cf6c6e block--9fdc82d4-4b55-42df-a5a0-922505cf6c6e--5806 block block-nir-events block-nir-events__widget">
+  
+    
+          <h2 class="h3 text-b mb-2 header-underline position-relative">Upcoming Events</h2>
+<div class="cards-container py-3">
+        <div class="nir-widget--list">
+                    <p class="h4 text-d-gray fw-bold mb-5">More events are coming soon.</p>
+            </div>
+    <div class="nir-widget--pager">
+        
+    </div>
+    <div class="nir-widget--total-results">
+        
+    </div>
+</div>
+  </div>
+<div class="block--blog block--nir-news__widget block--nir-news__widget--5806 block--column2--nir-news__widget block--column2--nir-news__widget--5806 block--8f634836-cc9c-468b-8c13-ee03ef7e4632 block--8f634836-cc9c-468b-8c13-ee03ef7e4632--5806 block block-nir-news block-nir-news__widget">
+  
+    
+          <h2 class="h3 text-b header-underline position-relative">Featured Documents</h2>
+
+
+    <div class="cards-container py-3">
+        
+<div class="card rounded blog-item">
+
+        <div class="card-body p-3">
+                            <h3 class="h3 card-title">
+                Zoom Fiscal 2023 Shareholder Letter
+            </h3>
+                                            <a href="/static-files/03ec903d-da7b-42da-9604-9ecef53e6bc8" class="card-link text-a mt-4 fw-black text-uppercase letter-spacing-2 position-relative d-flex">
+                    <div class="text-a">
+                        READ
+                    </div>
+                    <div class="ms-2">
+                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.05289 0L5.94711 4.69873C6.6843 5.40646 6.6843 6.55393 5.94711 7.26167L1.05289 2.56294C0.315704 1.8552 0.315705 0.707737 1.05289 0Z" fill="#2D8CFF"></path>
+                            <path d="M1.05289 12L5.94711 7.30127C6.6843 6.59354 6.6843 5.44607 5.94711 4.73833L1.05289 9.43706C0.315704 10.1448 0.315705 11.2923 1.05289 12Z" fill="#2D8CFF"></path>
+                        </svg>
+                    </div>
+                </a>
+                        </div>
+</div>
+
+
+
+
+
+<div class="card rounded blog-item">
+
+        <div class="card-body p-3">
+                            <h3 class="h3 card-title">
+                Zoom ESG Report 2023
+            </h3>
+                                            <a href="/static-files/20630fc4-d55b-4309-8157-25c4231f9f24" class="card-link text-a mt-4 fw-black text-uppercase letter-spacing-2 position-relative d-flex">
+                    <div class="text-a">
+                        READ
+                    </div>
+                    <div class="ms-2">
+                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.05289 0L5.94711 4.69873C6.6843 5.40646 6.6843 6.55393 5.94711 7.26167L1.05289 2.56294C0.315704 1.8552 0.315705 0.707737 1.05289 0Z" fill="#2D8CFF"></path>
+                            <path d="M1.05289 12L5.94711 7.30127C6.6843 6.59354 6.6843 5.44607 5.94711 4.73833L1.05289 9.43706C0.315704 10.1448 0.315705 11.2923 1.05289 12Z" fill="#2D8CFF"></path>
+                        </svg>
+                    </div>
+                </a>
+                        </div>
+</div>
+
+
+
+
+
+    </div>
+
+
+  </div>
+</div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block-region-column3"><div class="block--news block--nir-news__widget block--nir-news__widget--5806 block--column3--nir-news__widget block--column3--nir-news__widget--5806 block--3af540cd-fdfd-4b45-b154-d5c0bb32e60c block--3af540cd-fdfd-4b45-b154-d5c0bb32e60c--5806 block block-nir-news block-nir-news__widget">
+  
+    
+          <h2 class="h3 text-b header-underline position-relative">Recent Press Releases</h2>
+
+
+    
+<div class="cards-container py-3 news-item">
+  <div class="card rounded">
+    <div class="card-body p-3">
+              <h2 class="h6 card-subtitle pb-3 text-d-gray letter-spacing-1 mb-0 ">
+          February 26, 2024
+        </h2>
+                    <h3 class="h3 card-title">
+          <a href="/news-releases/news-release-details/zoom-video-communications-reports-fourth-quarter-and-fiscal-3" hreflang="en">Zoom Video Communications Reports Fourth Quarter and Fiscal Year 2024 Financial Results</a>
+        </h3>
+                        </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="cards-container py-3 news-item">
+  <div class="card rounded">
+    <div class="card-body p-3">
+              <h2 class="h6 card-subtitle pb-3 text-d-gray letter-spacing-1 mb-0 ">
+          February 1, 2024
+        </h2>
+                    <h3 class="h3 card-title">
+          <a href="/news-releases/news-release-details/zoom-release-financial-results-fourth-quarter-and-full-fiscal-1" hreflang="en">Zoom to Release Financial Results for the Fourth Quarter and Full Fiscal Year 2024</a>
+        </h3>
+                        </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="cards-container py-3 news-item">
+  <div class="card rounded">
+    <div class="card-body p-3">
+              <h2 class="h6 card-subtitle pb-3 text-d-gray letter-spacing-1 mb-0 ">
+          December 6, 2023
+        </h2>
+                    <h3 class="h3 card-title">
+          <a href="/news-releases/news-release-details/zoom-delivers-ai-powered-customer-experiences-unmatched-value" hreflang="en">Zoom delivers AI-powered customer experiences at an unmatched value for companies of every size</a>
+        </h3>
+                        </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  </div>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+  </div>
+</article>
+
+  </div>
+
+  </div>
+
+    </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="bg-c py-4  px-5 text-white">
+        <div class="row max-width-1080">
+                            
+
+        
+    <div class="col-12 col-md">
+    <ul class="nav footer-nav flex-column" role="navigation">
+        <small class="fw-bold py-3">About </small>
+                                          <li class="nav-link px-0 py-0">
+          <a href="http://blog.zoom.us/" aria-label="Zoom Blog">
+              <small>Zoom Blog</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/customer/all/" aria-label="Customers">
+              <small>Customers</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/team/" aria-label="Our Team">
+              <small>Our Team</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://careers.zoom.us/home" aria-label="Careers">
+              <small>Careers</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://marketplace.zoom.us/" aria-label="Integrations">
+              <small>Integrations</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://partner.zoom.us/" aria-label="Partners">
+              <small>Partners</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="/index.php/investor-relations" aria-label="Investors">
+              <small>Investors</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/press/" aria-label="Press">
+              <small>Press</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/zoom-esg/" aria-label="ESG Responsibillity">
+              <small>ESG Responsibillity</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/media-kit/" aria-label="Media Kit">
+              <small>Media Kit</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://learn-zoom.us/show-me" aria-label="How to Videos">
+              <small>How to Videos</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://developers.zoom.us/" aria-label="Developer Platform">
+              <small>Developer Platform</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/zoom-ventures/" aria-label="Zoom Ventures">
+              <small>Zoom Ventures</small>
+          </a>
+                  </li>
+            
+
+
+            </ul>
+</div>
+
+
+        
+    <div class="col-12 col-md">
+    <ul class="nav footer-nav flex-column" role="navigation">
+        <small class="fw-bold py-3">Download</small>
+                                          <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/download#client_4meeting" aria-label="Meetings Client">
+              <small>Meetings Client</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/download#room_client" aria-label="Zoom Rooms Client">
+              <small>Zoom Rooms Client</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/download#chrome_ext" aria-label="Browser Extension">
+              <small>Browser Extension</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/download#outlook_plugin" aria-label="Outlook Plug-in">
+              <small>Outlook Plug-in</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/download#lync_plugin" aria-label="Lync Plug-in">
+              <small>Lync Plug-in</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/download#mobile_app" aria-label="Android App">
+              <small>Android App</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/virtual-backgrounds/" aria-label="Zoom Virtual Backgrounds">
+              <small>Zoom Virtual Backgrounds</small>
+          </a>
+                  </li>
+            
+
+
+            </ul>
+</div>
+
+
+        
+    <div class="col-12 col-md">
+    <ul class="nav footer-nav flex-column" role="navigation">
+        <small class="fw-bold py-3">Sales</small>
+                                          <li class="nav-link px-0 py-0">
+          <a href="tel:1.888.799.9666" aria-label="1.888.799.9666">
+              <small>1.888.799.9666</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/contactsales/" aria-label="Contact Sales">
+              <small>Contact Sales</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/pricing" aria-label="Plans &amp; Pricing">
+              <small>Plans &amp; Pricing</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/livedemo/" aria-label="Request a Demo">
+              <small>Request a Demo</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/events" aria-label="Webinars and Events">
+              <small>Webinars and Events</small>
+          </a>
+                  </li>
+            
+
+
+            </ul>
+</div>
+
+
+        
+    <div class="col-12 col-md">
+    <ul class="nav footer-nav flex-column" role="navigation">
+        <small class="fw-bold py-3">Support</small>
+                                          <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/test" aria-label="Test Zoom">
+              <small>Test Zoom</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/account" aria-label="Account">
+              <small>Account</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://support.zoom.us/hc/en-us" aria-label="Support Center">
+              <small>Support Center</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://learning.zoom.us/learn" aria-label="Learning Center">
+              <small>Learning Center</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://zoom.us/feed" aria-label="Feedback">
+              <small>Feedback</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/contact" aria-label="Contact Us">
+              <small>Contact Us</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/accessibility/" aria-label="Accessibility">
+              <small>Accessibility</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://devsupport.zoom.us/hc/en-us" aria-label=" Developer Support">
+              <small> Developer Support</small>
+          </a>
+                  </li>
+              <li class="nav-link px-0 py-0">
+          <a href="https://explore.zoom.us/en/trust/legal-compliance/" aria-label="Privacy, Security, Legal Policies, and Modern Slavery Act Transparency Statement">
+              <small>Privacy, Security, Legal Policies, and Modern Slavery Act Transparency Statement</small>
+          </a>
+                  </li>
+            
+
+
+            </ul>
+</div>
+
+                        <div class="col py-3 flex-270">
+                                    
+
+
+                              <ul data-block-uuid="fbcb980b-46da-43a6-a086-2a5a527f25b3" class="nav">
+                  
+                                  
+
+        <li class="pe-xxl-1 pe-xl-2 pe-3">
+          <a href="https://blog.zoom.us/?_ga=2.34802529.1567437254.1618345027-574987205.1618345027" class="circle pr-1" aria-label="Zoom on Blog">
+            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 0C3.63996 0 0.5 3.14026 0.5 7C0.5 10.8597 3.63996 14 7.5 14C11.36 14 14.5 10.8597 14.5 7C14.5 3.14026 11.36 0 7.5 0ZM7.5 1.52174C8.79652 1.52174 9.9853 1.9737 10.923 2.72543C10.632 2.919 10.4522 3.255 10.4522 3.62174C10.4522 4.1087 10.7261 4.53478 11.0304 5.02174C11.2739 5.41739 11.5174 5.93478 11.5174 6.66522C11.5174 7.18261 11.3652 7.82174 11.0609 8.61304L10.4522 10.6217L8.2913 4.16957C8.65652 4.13913 8.9913 4.1087 8.9913 4.1087C9.29565 4.07826 9.26522 3.62174 8.96087 3.62174C8.96087 3.62174 8.96087 3.62174 8.93043 3.62174C8.93043 3.62174 7.95652 3.71304 7.31739 3.71304C6.73913 3.71304 5.73478 3.62174 5.73478 3.62174C5.73478 3.62174 5.73478 3.62174 5.70435 3.62174C5.4 3.62174 5.36957 4.1087 5.67391 4.1087C5.67391 4.1087 5.97826 4.13913 6.31304 4.16957L7.25652 6.72609L5.94783 10.6522L3.75652 4.13913C4.12174 4.1087 4.45652 4.07826 4.45652 4.07826C4.76087 4.04783 4.73043 3.5913 4.42609 3.5913C4.42609 3.5913 4.42609 3.5913 4.39565 3.5913C4.39565 3.5913 3.7407 3.65278 3.15239 3.6747C4.15309 2.36783 5.72504 1.52174 7.5 1.52174ZM2.02174 7C2.02174 6.45217 2.10422 5.92413 2.25365 5.4253L4.51313 11.5902C3.01422 10.6129 2.02174 8.92439 2.02174 7ZM5.88026 12.2348L7.5 7.48696L9.23022 12.1955C8.68604 12.3763 8.10535 12.4783 7.5 12.4783C6.93604 12.4783 6.39217 12.3927 5.88026 12.2348ZM10.636 11.4891L12.2478 6.81739C12.487 6.2087 12.6161 5.67852 12.6709 5.20313C12.8666 5.76648 12.9783 6.36939 12.9783 7C12.9783 8.85987 12.0512 10.4991 10.636 11.4891Z" fill="white"/>
+                            </svg>
+          </a>
+                            </li>
+              
+                                  
+
+        <li class="pe-xxl-1 pe-xl-2 pe-3">
+          <a href="https://www.linkedin.com/company/zoom-video-communications/" class="circle pr-1" aria-label="Zoom on LinkedIn">
+            <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.63043 12.9022H0.583334V4.44807H3.63043V12.9022ZM2.05314 2.89855C1.12198 2.89855 0.5 2.27778 0.5 1.44928C0.5 0.620773 1.12077 0 2.1558 0C3.08696 0 3.70894 0.620773 3.70894 1.44928C3.70894 2.27778 3.08816 2.89855 2.05314 2.89855ZM14.5 12.9022H11.5507V8.2814C11.5507 7.00362 10.7645 6.70894 10.4698 6.70894C10.1751 6.70894 9.19203 6.9058 9.19203 8.2814C9.19203 8.47826 9.19203 12.9022 9.19203 12.9022H6.14493V4.44807H9.19203V5.62802C9.58454 4.93961 10.3708 4.44807 11.8454 4.44807C13.32 4.44807 14.5 5.62802 14.5 8.2814V12.9022Z" fill="white"/>
+                            </svg>
+          </a>
+                            </li>
+              
+                                  
+
+        <li class="pe-xxl-1 pe-xl-2 pe-3">
+          <a href="https://twitter.com/zoom" class="circle pr-1" aria-label="Zoom on Twitter">
+            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.2009 0C8.60049 0 7.30065 1.2981 7.30065 2.89376C7.30065 3.19287 7.4009 3.39261 7.4009 3.59163C5.00145 3.4927 2.90221 2.29588 1.50244 0.60012C1.20266 0.999327 1.10146 1.49655 1.10146 1.99585C1.10146 2.99329 1.60216 3.79349 2.40236 4.49181C1.90311 4.39171 1.50157 4.29075 1.10146 4.09173C1.10146 5.48837 2.10079 6.58635 3.40024 6.88547C3.10046 6.98556 2.90035 6.98549 2.60057 6.98549C2.50025 6.98549 2.29882 6.88547 2.09935 6.88547C2.49945 7.983 3.49965 8.87905 4.79911 8.87905C3.79943 9.57737 2.49889 10.077 1.19943 10.077H0.5C1.79946 10.8743 3.30011 11.375 4.89935 11.375C10.1987 11.375 13.0989 6.98454 13.0989 3.19382V2.79374C13.5993 2.39453 14.0976 1.89627 14.5 1.29571C13.9004 1.59599 13.4 1.69572 12.8004 1.79581C13.4 1.39777 13.8996 0.898361 14.099 0.20004C13.5986 0.499154 12.9991 0.797814 12.2992 0.897907C11.7988 0.299678 11.0011 0 10.2009 0Z" fill="white"/>
+                            </svg>
+          </a>
+                            </li>
+              
+                                  
+
+        <li class="pe-xxl-1 pe-xl-2 pe-3">
+          <a href="http://www.youtube.com/zoommeetings" class="circle pr-1" aria-label="Zoom on Youtube">
+            <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.2074 1.67341C14.0464 1.01497 13.5718 0.495881 12.9698 0.319787C11.8778 -0.000243981 7.5 -0.000244141 7.5 -0.000244141C7.5 -0.000244141 3.1222 -0.000243981 2.0302 0.319787C1.4282 0.495881 0.9536 1.01497 0.7926 1.67341C0.5 2.86779 0.5 6.12476 0.5 6.12476C0.5 6.12476 0.5 9.38172 0.7926 10.5761C0.9536 11.2345 1.4282 11.7536 2.0302 11.9297C3.1222 12.2498 7.5 12.2498 7.5 12.2498C7.5 12.2498 11.8778 12.2498 12.9698 11.9297C13.5725 11.7536 14.0464 11.2345 14.2074 10.5761C14.5 9.38172 14.5 6.12476 14.5 6.12476C14.5 6.12476 14.5 2.86779 14.2074 1.67341ZM6.1 8.77688V3.47263L10.3 6.12476L6.1 8.77688Z" fill="white"/>
+                            </svg>
+          </a>
+                            </li>
+              
+                                  
+
+        <li class="pe-xxl-1 pe-xl-2 pe-3">
+          <a href="https://www.facebook.com/zoom" class="circle pr-1" aria-label="Zoom on Facebook">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.86748 4.90003H5.39998V3.50003C5.39998 2.77763 5.45878 2.32264 6.49408 2.32264H7.80168V0.0966434C7.16538 0.0308437 6.52558 -0.00135625 5.88508 4.37499e-05C3.98599 4.37499e-05 2.59999 1.15994 2.59999 3.28933V4.90003H0.5V7.70002L2.59999 7.69932V14H5.39998V7.69792L7.54618 7.69722L7.86748 4.90003Z" fill="white"/>
+                            </svg>
+          </a>
+                            </li>
+              
+                                  
+
+        <li class="pe-xxl-1 pe-xl-2 pe-3 pb-2">
+          <a href="https://www.instagram.com/zoom" class="circle pr-1" aria-label="Zoom on Instagram">
+            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.38889 0C2.24456 0 0.5 1.74456 0.5 3.88889V10.1111C0.5 12.2554 2.24456 14 4.38889 14H10.6111C12.7554 14 14.5 12.2554 14.5 10.1111V3.88889C14.5 1.74456 12.7554 0 10.6111 0H4.38889ZM4.38889 1.55556H10.6111C11.8976 1.55556 12.9444 2.60244 12.9444 3.88889V10.1111C12.9444 11.3976 11.8976 12.4444 10.6111 12.4444H4.38889C3.10244 12.4444 2.05556 11.3976 2.05556 10.1111V3.88889C2.05556 2.60244 3.10244 1.55556 4.38889 1.55556ZM11.3889 2.33333C11.1826 2.33333 10.9848 2.41528 10.8389 2.56114C10.6931 2.707 10.6111 2.90483 10.6111 3.11111C10.6111 3.31739 10.6931 3.51522 10.8389 3.66108C10.9848 3.80694 11.1826 3.88889 11.3889 3.88889C11.5952 3.88889 11.793 3.80694 11.9389 3.66108C12.0847 3.51522 12.1667 3.31739 12.1667 3.11111C12.1667 2.90483 12.0847 2.707 11.9389 2.56114C11.793 2.41528 11.5952 2.33333 11.3889 2.33333ZM7.5 3.11111C5.35567 3.11111 3.61111 4.85567 3.61111 7C3.61111 9.14433 5.35567 10.8889 7.5 10.8889C9.64433 10.8889 11.3889 9.14433 11.3889 7C11.3889 4.85567 9.64433 3.11111 7.5 3.11111ZM7.5 4.66667C8.78644 4.66667 9.83333 5.71356 9.83333 7C9.83333 8.28644 8.78644 9.33333 7.5 9.33333C6.21356 9.33333 5.16667 8.28644 5.16667 7C5.16667 5.71356 6.21356 4.66667 7.5 4.66667Z" fill="white"/>
+                            </svg>
+          </a>
+                            </li>
+          </ul>
+  
+
+
+    
+                            </div>
+        </div>
+        <div class="row pt-4 pb-3 max-width-1080">
+            <div class="col copyright-txt">
+                                    Copyright ©2024 Zoom Video Communications, Inc. All rights reserved. 
+
+
+                                               <a href="https://explore.zoom.us/en/terms/">Terms</a>
+                      |
+                                                   <a href="https://explore.zoom.us/en/privacy/">Privacy</a>
+                      |
+                                                   <a href="https://explore.zoom.us/en/trust/">Trust Center</a>
+                      |
+                                                   <a href="https://explore.zoom.us/en/acceptable-use-guidelines/">Acceptable Use Guidelines</a>
+                      |
+                                                   <a href="https://explore.zoom.us/en/trust/legal-compliance/" class="legal-compliance">Legal &amp; Compliance</a>
+                                        
+
+
+    
+                            </div>
+        </div>
+    </div>
+</footer>
+  </div>
+
+    
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/5806","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"nir_base\/lib,nir_base\/nir_icons,nir_base\/nir_toolbar,nir_base\/sidr,nir_ckeditor_datatables\/datatables,nir_market_data_block\/analyst_rating_bar_chart,nir_market_data_block\/analyst_ratings_table,nir_market_data_block\/mean_recommendation_chart,nir_market_data_block\/nir_market_data_block.command,nir_market_data_block\/nir_market_data_block.stockQuote,nir_multimedia\/nir_multimedia,nir_pid3306\/override,nir_website_notices\/nir_website_notices.notices,radix_layouts\/radix_layouts,system\/base","theme":"nir_pid3306","theme_token":null},"ajaxTrustedUrl":[],"nir_admin_use_chosen":true,"nir_admin_use_select2":false,"user":{"uid":0,"permissionsHash":"2d26a688aab1394fd7e8ea8adf0c7cd08c63ac2d5ec1ad4ced29db6a79d098b9"}}</script>
+<script src="/sites/g/files/knoqqb71746/files/js/js_KAQG0oZ_1cZ70rnxAmFGpLM8MAUKaZDPc4NY0NRd53U.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=nir_pid3306&amp;include=eJyVUm1uwjAMvVBppiHtHtMOELmJBx6pzRwHxk4_t0OCMvYDRUrs9178kZhJY9phJhONGczXULCGi9mxS0bQHdosiEORtAsjAkfFJOOI7DgJx7QFtX_0wFBO1aK6lDdxAH1AXuNcS5dEMWRteyhvaDNzjfV7lY1iPdfcitHorUFYul31yDiGASrOyskIlbJevMmgJHyO__HZUE99o34vlaZmb3GPW2Tzi46SUZm-dVGcSUtbPCBbXRlWW0QQTte1YMFkz32hQUFPf4gL4IrfOMTmOT1NY09eJ-yGGCDtBmHsTKT4-4fz2fsHtj8gsNHqvZAPh96Sy2e6BveU1-unl5AKeZ-rLYIXc495F7Eb5kh5g1YXmBxQlTJ2Cpm-YoGTNKth4c0Xjjj4v2BkMUo-v3ew_nz-M3F30X6ab-D80J1qvr82b_AHalhO_w"></script>
+
+    <script nonce="${csp_script_nonce}" type="text/javascript">
+function OptanonWrapper() {
+var trustDom = document.getElementById('ot-do-not-sell');
+if (trustDom) {
+trustDom.text = "Do Not Sell My Personal Information";
+}
+}
+</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"761e715901","applicationID":"32397309,24276188","transactionName":"ZlVXYRcAW0ZRW0QKX18fdFYRCFpbH3xCFkBQXGlbCgVQaXNXXhdCXlxZUBc9e1pUXWYKVUZzWlsRE1pZXF1CTg5HWVBC","queueTime":16,"applicationTime":386,"atts":"ShJUF18aSEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
