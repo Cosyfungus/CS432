@@ -71,13 +71,13 @@ Take a screenshot of the `curl` command and options you used and the result of y
 d) View the HTML output file that was produced by `curl` from part c in a web browser and take a screenshot to include in your report.
 ## Answer
 ### a) 
-![\label{fig:web-growth}](HW1-Q2-a.png)
+![\label{fig:web-growth}](HW-Q2-a.png)
 ### b) 
-![\label{fig:web-growth}](HW1-Q2-b.png)
+![\label{fig:web-growth}](HW-Q2-b.png)
 ### c) 
-![\label{fig:web-growth}](HW1-Q2-c.png)
+![\label{fig:web-growth}](HW-Q2-c.png)
 ### d) 
-![\label{fig:web-growth}](HW1-Q2-d.png)
+![\label{fig:web-growth}](HW-Q2-d.png)
 # Q3
 For some of our later assignments, you will be analyzing large numbers of webpages. The goal of this question is to write a Python program to gather URIs of webpages that have enough text so they will be useful later.
 
