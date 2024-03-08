@@ -48,9 +48,36 @@ The example figure below shows the growth in the number of websites between 1993
 I designed the graph using Miro, I just created every node first then started arranging them according to the connections made until it looked organized enough to label.  Node N is a tendril connected to the OUT node L, Node O is a tendril connected from the IN node E. Node J is the Tube connecting the two tendrils. Nodes K and I are completely disconnected from the rest of the graph, while Node M connects straight to the SCC nodes.
 
 # Q2
+Demonstrate that you know how to use `curl` and are familiar with the available options.  Complete the following steps using https://www.cs.odu.edu/~mweigle/courses/cs532/ua_echo.php as the URI to request. Explain the results you get from each step.
 
+a) First, load the webpage at the URI in your web browser.  The result should show the "User-Agent" HTTP request header that your web browser sends to the web server. Take a screenshot to include in your report.
+
+b) Use a single `curl` command with the appropriate options to do the following:
+  * request the URI
+  * show the HTTP response headers
+  * follow any redirects
+  * change the User-Agent HTTP request field to "CS432/532"
+
+Take a screenshot of the `curl` command and options you used and the result of your execution to include in your report.
+
+c) Use a single `curl` command with the appropriate options to do the following:
+  * request the URI
+  * follow any redirects
+  * change the User-Agent HTTP request field to "CS432/532"
+  * save the HTML output to a file
+
+Take a screenshot of the `curl` command and options you used and the result of your execution to include in your report.  
+
+d) View the HTML output file that was produced by `curl` from part c in a web browser and take a screenshot to include in your report.
 ## Answer
-
+### a) 
+![\label{fig:web-growth}](HW1-Q2-a.png)
+### b) 
+![\label{fig:web-growth}](HW1-Q2-b.png)
+### c) 
+![\label{fig:web-growth}](HW1-Q2-c.png)
+### d) 
+![\label{fig:web-growth}](HW1-Q2-d.png)
 # Q3
 For some of our later assignments, you will be analyzing large numbers of webpages. The goal of this question is to write a Python program to gather URIs of webpages that have enough text so they will be useful later.
 
