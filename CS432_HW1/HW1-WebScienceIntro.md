@@ -71,12 +71,24 @@ Take a screenshot of the `curl` command and options you used and the result of y
 d) View the HTML output file that was produced by `curl` from part c in a web browser and take a screenshot to include in your report.
 ## Answer
 ### a) 
+Web browser shows the User-Agent as multiple browsers, actual browser OperaGX
 ![\label{fig:web-growth}](HW-Q2-a.png)
 ### b) 
+The options used include -i -L and --user-agent
+-i is used to receive protocol response headers
+-L is used for following redirects
+--user-agent CS432/532 changes the user agent from the list of browsers to CS432/532
+
 ![\label{fig:web-growth}](HW-Q2-b.png)
 ### c) 
+-L follows redirects
+--user-agent CS432/532 changes the user-agent
+--output html_cURL outputs the results into a file named html_cURL in the directory the command was run.
+Response in command prompt displayed the download process.
+
 ![\label{fig:web-growth}](HW-Q2-c.png)
 ### d) 
+Results of the html_cURL document created in part c. Displays the user agent created.
 ![\label{fig:web-growth}](HW-Q2-d.png)
 # Q3
 For some of our later assignments, you will be analyzing large numbers of webpages. The goal of this question is to write a Python program to gather URIs of webpages that have enough text so they will be useful later.
@@ -146,7 +158,6 @@ for link in soup.find_all('a', attrs={'href': re.compile("^https://")}):
 
 # References
 
-*Every report must list the references that you consulted while completing the assignment. If you consulted a webpage, you must include the URL.  These are just a couple examples.*
+* geeksforgeeks, BeautifulSoup – Scraping Link from HTML, <https://www.geeksforgeeks.org/beautifulsoup-scraping-link-from-html/>
+* eneko, list of cURL options, <https://gist.github.com/eneko/dc2d8edd9a4b25c5b0725dd123f98b10>
 
-* Stack Overflow, How can I parse (read) and use JSON in Python?, <https://stackoverflow.com/questions/7771011/how-can-i-parse-read-and-use-json-in-python>
-* ChatGPT conversation, Initial prompt: "write a python line to detect if a string ends with .png", <https://chat.openai.com/share/5de76e93-c26b-4665-a0fc-b782b01a9285>
