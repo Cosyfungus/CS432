@@ -54,6 +54,45 @@ I designed the graph using Miro, I just created every node first then started ar
 # Q3
 
 ## Answer
+I used multiple links to generate 500 URIs rather than branching off one link. I wanted a larger variety of websites.
+
+URIs used:
+    "https://www.reddit.com/"
+    "https://www.toyota.com/"
+    "https://kbdfans.com/collections/keycaps"
+    "https://en.wikipedia.org/wiki/1996_Men%27s_Ice_Hockey_World_Championships"
+    "https://www.youtube.com"
+    "https://en.wikipedia.org/wiki/Web_science" 
+    "https://github.com/VAST-AI-Research/TripoSR"
+    "https://www.chevrolet.com"
+    "https://www.samsung.com/us/"
+    "https://www.aliexpress.us"
+    "https://zoom.us"
+    "https://portal.odu.edu"
+  Results are in links.txt in the main repository.
+    
+#### Code without comments (simpleWebCrawler.py:
+```
+html_doc = requests.get(url, timeout=5).text
+
+soup = BeautifulSoup(html_doc, 'html.parser')
+
+for link in soup.find_all('a', attrs={'href': re.compile("^https://")}):
+    print(link.get('href'))
+
+    exists = False
+
+    fileLinks = open ("links.txt", "a+")
+    
+    for line in fileLinks : 
+        if line == link.get('href') :
+            exists = True
+
+    if exists == False :       
+        fileLinks.write(link.get('href'))
+        fileLinks.write("\n")
+    fileLinks.close()
+```
 
 # References
 
