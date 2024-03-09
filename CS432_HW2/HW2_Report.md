@@ -38,12 +38,7 @@ def md5Name(uRI):
 def downloadFile(uRI, filename):
     try:
         response = requests.get(uRI)
-        # only tries to save the document if it receives
-        # a status code of 200 indicating successful connection
-        # as this is a get request 200 will work for most cases
         if response.status_code == 200:
-            # creates path towards the correct folder and 
-            # saves the data into that folder
             filepath = f"./CS432_HW2/RawFiles/{filename}"
             file = open (filepath, 'w')
             file.write(response.text)
