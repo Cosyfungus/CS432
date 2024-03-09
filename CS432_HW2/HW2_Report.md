@@ -162,17 +162,17 @@ if searchFound :
 else : 
     print(f"{searchTerm} not found in files")
 ```
-|TF-IDF |TF    |IDF    |URI    |term count|word count        
-|.0015|.0011|1.3383|https://explore.zoom.us/en/team/|3|2689
-|.0079|.0059|1.3383|https://tv.youtube.com/learn/nflsundayticket|10|1702
-|.0173|.0129|1.3383|https://www.setf.com/|2|154
-|.0024|.0018|1.3383|https://www.chevrolet.com/accessibility|2|1112
-|.0096|.0072|1.3383|https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement|4|553
-|.0158|.0118|1.3383|https://m.me/AliExpress|4|340
-|.0032|.0024|1.3383|https://play.google.com/store/apps/details?id=com.reddit.frontpage|1|416
-|.0028|.0017|1.3383|https://www.reddit.com/policies/privacy-policy|8|4619
-|.0017|.0013|1.3383|https://docs.github.com/site-policy/privacy-policies/github-privacy-statement|4|3140
-|.0005|.0004|1.3383|https://terms.alicdn.com/legal-agreement/terms/suit_bu1_aliexpress/suit_bu1_aliexpress202204182115_66077.html|7|16020
+|TF-IDF |TF    |IDF    |URI    |term count |word count        
+|.0015 |.0011 |1.3383 |https://explore.zoom.us/en/team/ |3 |2689
+|.0079 |.0059 |1.3383 |https://tv.youtube.com/learn/nflsundayticket |10 |1702
+|.0173 |.0129 |1.3383 |https://www.setf.com/ |2 |154
+|.0024 |.0018 |1.3383 |https://www.chevrolet.com/accessibility |2 |1112
+|.0096 |.0072 |1.3383 |https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement |4 |553
+|.0158 |.0118 |1.3383 |https://m.me/AliExpress |4 |340
+|.0032 |.0024 |1.3383 |https://play.google.com/store/apps/details?id=com.reddit.frontpage |1 |416
+|.0028 |.0017 |1.3383 |https://www.reddit.com/policies/privacy-policy |8 |4619
+|.0017 |.0013 |1.3383 |https://docs.github.com/site-policy/privacy-policies/github-privacy-statement |4 |3140
+|.0005 |.0004 |1.3383 |https://terms.alicdn.com/legal-agreement/terms/suit_bu1_aliexpress/suit_bu1_aliexpress202204182115_66077.html |7 |16020
 # Q3
 
 ## Answer
