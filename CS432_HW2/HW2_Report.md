@@ -218,7 +218,7 @@ To calculate these I used <https://dnschecker.org/pagerank.php>, I took each URI
 |0.5 |https://foundation.wikimedia.org
 |0.5 |https://terms.alicdn.com
 |0.3 |https://www.setf.com/
-
+The biggest change in this list was setf.com moving from first in TF-IDF ranking to last in PageRank, this does not suprise me as it is a small document that just happened to have a larger than average frequency of the term 'device', meanwhile PageRank calculates based on much more than something this specific. It was suprising to see the highest rank on this list came from reddit's app on google play store, followed by reddit. Honestly, every other pagerank on the list is so similar that there isn't much to compare between them.
 
 
 # References
