@@ -162,7 +162,8 @@ if searchFound :
 else : 
     print(f"{searchTerm} not found in files")
 ```
-|TF-IDF |TF    |IDF    |URI    |term count |word count        
+|TF-IDF |TF    |IDF    |URI    |term count |word count  
+|------:|----:|-----:|---|-:|---:
 |.0015 |.0011 |1.3383 |https://explore.zoom.us/en/team/ |3 |2689
 |.0079 |.0059 |1.3383 |https://tv.youtube.com/learn/nflsundayticket |10 |1702
 |.0173 |.0129 |1.3383 |https://www.setf.com/ |2 |154
