@@ -81,7 +81,9 @@ def boilFile() :
 
 # References
 
-*Every report must list the references that you consulted while completing the assignment. If you consulted a webpage, you must include the URL.  These are just a couple examples.*
+* Python, __main__ — Top-level code environment, <https://docs.python.org/3/library/__main__.html>
+* Stackoverflow, how can I iterate over files in a given directory, <https://stackoverflow.com/questions/10377998/how-can-i-iterate-over-files-in-a-given-directory>
+* jmriebold, boilerpy3 documentation, <https://github.com/jmriebold/BoilerPy3>
+* Matthew Brett, using variables in strings, <https://matthew-brett.github.io/teaching/string_formatting.html>
+* GeeksforGeeks, md5hash in python, <https://www.geeksforgeeks.org/md5-hash-python/>
 
-* Stack Overflow, How can I parse (read) and use JSON in Python?, <https://stackoverflow.com/questions/7771011/how-can-i-parse-read-and-use-json-in-python>
-* ChatGPT conversation, Initial prompt: "write a python line to detect if a string ends with .png", <https://chat.openai.com/share/5de76e93-c26b-4665-a0fc-b782b01a9285>
