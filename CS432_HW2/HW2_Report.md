@@ -162,6 +162,7 @@ if searchFound :
 else : 
     print(f"{searchTerm} not found in files")
 ```
+Table 1. 10 Hits for the term 'device', ranked by TF-IDF.
 |TF-IDF |TF    |IDF    |URI    |term count |word count  
 |------:|----:|-----:|---|-:|---:
 |.0173 |.0129 |1.3383 |https://www.setf.com/ |2 |154
@@ -174,9 +175,51 @@ else :
 |.0017 |.0013 |1.3383 |https://docs.github.com/site-policy/privacy-policies/github-privacy-statement |4 |3140
 |.0015 |.0011 |1.3383 |https://explore.zoom.us/en/team/ |3 |2689
 |.0005 |.0004 |1.3383 |https://terms.alicdn.com/legal-agreement/terms/suit_bu1_aliexpress/suit_bu1_aliexpress202204182115_66077.html |7 |16020
-# Q3
 
+To calculate these values, I grabbed the term count from my search.py and the wordcount from 'wc -w <file>' in console, I then divided the term count by the word count to calculate the tf value, example 2/154 = .0129 (setf.com)
+Following this, I calculated the IDF on google for the term ('device'), receiving 15,820,000,000 results from the estimated 40,000,000,000 size of the corpus
+Using Log2(40bil/15.820bil) gives the IDF result, which I multiplied with the TF for each result to receive its TF-IDF value. example .0129 * 1.3383 = .0173 (setf.com)
+
+# Q3
+Now rank the *domains* of those 10 URIs from Q2 by their PageRank.  Use any of the free PR estimators on the web,
+such as:
+* https://searchenginereports.net/google-pagerank-checker
+* https://dnschecker.org/pagerank.php
+* https://smallseotools.com/google-pagerank-checker/
+* https://www.duplichecker.com/page-rank-checker.php
+
+Note that these work best on domains, not full URIs, so, for example, submit things `https://www.cnn.com/` rather than `https://www.cnn.com/world/live-news/nasa-mars-rover-landing-02-18-21`.
+
+If you use these tools, you'll have to do so by hand (most have anti-bot captchas), but there are only 10 to do.  
+
+Normalize the values they give you to be from 0 to 1.0.  Use the same tool on all 10 (again, consistency is more important than accuracy). 
+
+Create a table similar to Table 1:
+
+Table 2.  10 hits for the term "shadow", ranked by PageRank of domain.
+
+|PageRank	|URI
+|-----:|---
+|0.9|		http://bar.com/
+|0.5	|	http://foo.com/
+
+*Q: Briefly compare and contrast the rankings produced in Q2 and Q3.*
 ## Answer
+To calculate these I used <https://dnschecker.org/pagerank.php>, I took each URI and concatenated it to its extension. The results received rank from 1 to 10 so I divided the results by 10 to scale them from 0 to 1. (two exceptions to this was https://play.google.com/store/apps/details?id=com.reddit.frontpage, and https://m.me/AliExpress, as they both are advertising their service on another website, and I figure its more accurate to to keep the extension in. Please let me know if this was incorrect)
+|PageRank	|URI
+|-----:|---
+|0.9 |https://play.google.com/store/apps/details?id=com.reddit.frontpage
+|0.8 |https://www.reddit.com
+|0.6 |https://explore.zoom.us		
+|0.6 |https://tv.youtube.com
+|0.6 |https://m.me/AliExpress
+|0.6 |https://docs.github.com/
+|0.5 |https://www.chevrolet.com
+|0.5 |https://foundation.wikimedia.org
+|0.5 |https://terms.alicdn.com
+|0.3 |https://www.setf.com/
+
+
 
 # References
 
